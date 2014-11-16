@@ -1,3 +1,20 @@
+.secret {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.secret:hover {
+    opacity: 1;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
 body {
     background-color: #871D85;
     position: relative;
