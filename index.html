@@ -10,6 +10,18 @@
 
         <link rel='stylesheet' href='prolayout.css' type="text/css">
         <script src='prolayout.js'></script>
+
+        <style>
+            .byline {
+                font-style: italic;
+                font-size: 80%;
+                margin-bottom:1em;
+            }
+
+            article img {
+                max-width: 100%;
+            }
+        </style>
     </head>
     
     <body>
@@ -136,37 +148,53 @@
 -                <div class='yellow'>The best internet on the internet</div>
                             
                 <div class='links'>
-                    <a href='http://blog.wetfish.net/'><h2>Blog</h2></a>
-                    <a href='http://wiki.wetfish.net/'><h2>Wiki</h2></a>
+                    <a href='https://trello.com/wetfish'><h2>Trello</h2></a>
+                    <a href='https://github.com/wetfish'><h2>GitHub</h2></a>
                     <a href='http://wiki.wetfish.net/mumble'><h2>Mumble</h2></a>
                     <a href='http://wiki.wetfish.net/irc'><h2>IRC</h2></a>
+                    <a href='http://wiki.wetfish.net/'><h2>Wiki</h2></a>
+                    <a href='http://blog.wetfish.net/'><h2>Tumblr</h2></a>
                 </div>
             </div>
                         
             <div id='content'>
                 <a href="https://login.wetfish.net/" class="right secret" style="line-height: 280%; margin-top: 0.67em">Login?</a>
-                <h1>Creative Community</h1>
- 
-                <p>
-                    Wetfish is a creative community. We make websites, robots, and pneumatic tubes. We're all big nerds! Wanna hang out some time?
-                </p>
 
-                <p style="margin-left: 2em;">
-                    <em>"Now wetfish.net services my wet needs more technomographicamally than ever before! Thanks, Wetfish!"</em>
-                    <div style="margin-left: 3em;">- Adrian, Antarctica</div>
-                </p>
+                <article>
+                    <h1 class="title">SlapStats!</h1>
 
-                <p>
-                    Unfortunately, this new home page is currently under construction. Please refresh every 5 minutes to check if it's done. In the mean time you can listen to this music:
-                </p>
+                    <div class="byline">
+                        Posted by <strong class="author">rachel</strong> on Feburary 1, 2015
+                    </div>
+                    
+                    <!-- <div class="date">{{date}}</div> -->
 
-		<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/180170098&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+                    <div class="content">
+                        <img src="img/slapgraph.png">
 
+                        <p>
+                            Checkout the newest wetfish project, <a href="https://slapstats.wetfish.net/" target="_blank">slapstats</a>!
+                        </p>
+
+                        <p>
+                            It's got graphs and all sorts of buttons.
+                        </p>
+                    </div>
+
+                    <div class="tags">
+                        Tagged:
+                        
+                        <ul>
+                            <li>Graphs</li>
+                            <li>Statistics</li>
+                            <li>Projects</li>
+                            <li>C3.js</li>
+                        </ul>
+                    </div>
+                </article>
+                
                 <div class="construction">
-                    <img src="/img/website_under_construction.png">
-                    <img src="/img/under-construction-pick.gif">
-                    <img src="/img/underconstruction.gif">
-                    <img src="/img/under-construction-truck.gif">
+                    <img src="img/under-construction-truck.gif">
                 </div>
 
                 <div class='clear'></div>
