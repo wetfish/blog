@@ -2,6 +2,9 @@
     <head>
         <title>Wetfish</title>
 
+        <!-- Google Fonts -->
+        <link rel="stylesheet" id="font-abel-css" href="https://fonts.googleapis.com/css?family=Abel&amp;ver=1" type="text/css" media="screen">
+
         <!-- jQuery -->
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
         <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js'></script>
@@ -19,8 +22,8 @@
         <!-- Hogan Templating -->
         <script src="js/hogan.js"></script> 
 
-        <!-- Google Fonts -->
-        <link rel="stylesheet" id="font-abel-css" href="https://fonts.googleapis.com/css?family=Abel&amp;ver=1" type="text/css" media="screen">
+        <!-- News feed -->
+        <script src="js/news.js"></script>
 
         <style>
             .byline {
@@ -171,38 +174,9 @@
             <div id='content'>
                 <a href="https://login.wetfish.net/" class="right secret" style="line-height: 280%; margin-top: 0.67em">Login?</a>
 
-                <article>
-                    <h1 class="title">SlapStats!</h1>
-
-                    <div class="byline">
-                        Posted by <strong class="author">rachel</strong> on Feburary 1, 2015
-                    </div>
-                    
-                    <!-- <div class="date">{{date}}</div> -->
-
-                    <div class="content">
-                        <img src="img/slapgraph.png">
-
-                        <p>
-                            Checkout the newest wetfish project, <a href="https://slapstats.wetfish.net/" target="_blank">slapstats</a>!
-                        </p>
-
-                        <p>
-                            It's got graphs and all sorts of buttons.
-                        </p>
-                    </div>
-
-                    <div class="tags">
-                        Tagged:
-                        
-                        <ul>
-                            <li>Graphs</li>
-                            <li>Statistics</li>
-                            <li>Projects</li>
-                            <li>C3.js</li>
-                        </ul>
-                    </div>
-                </article>
+                <section class="news">
+                    Loading...
+                </section>
                 
                 <div class="construction">
                     <img src="img/under-construction-truck.gif">
