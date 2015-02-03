@@ -1,0 +1,10 @@
+{
+  "name": "wetfish-corporate",
+  "version": "0.0.1",
+  "author": "Rachel <rachel@wetfish.net>",
+  "description": "The Main Page of Wetfish.net",
+  "dependencies" : {
+    "express": "*",
+    "hogan.js": "*"
+  }
+}
