@@ -12,6 +12,30 @@ $(document).ready(function()
     var news =
     [
         {
+            title: 'Remember when Skype was cool?',
+            author: 'rachel',
+            date: 'Friday 13, 2015',
+            content:
+            [
+                "Back in the day when Skype was still being written by the same people who made Kazaa, the internet was a pretty cool place. \
+                 You could make calls to anyone, the download was only a few megabyes, and behind the scenes it was total P2P cipherpunk beauty.",
+                "Now a days, we have Tox!",
+                "<a href='https://tox.im/#features'><img src='img/tox-screenie.png'></a>",
+                "<i class='small'>Tox is a peer to peer network for text, audio, and video calls.</i>",
+                "Unlike Skype, Tox is completely <a href='https://github.com/tox'>open source</a> and already comes in a variety of clients for pretty much <a href='https://wiki.tox.im/Clients'>every platform</a>. \
+                 By default your user ID is a unique cryptographic key, but you can get an easy to remember username at <a href='https://toxme.se/'>Toxme.se</a>.",
+                "<h3>Wanna chat?</h3>",
+                "<ul> \
+                    <li>rachel@toxme.se</li> \
+                    <li>haitani@toxme.se</li> \
+                    <li>copt@toxme.se</li> \
+                </ul>"
+            ],
+
+            tags: ['Tox', 'Privacy', 'Open Source', 'P2P']
+        },
+
+        {
             title: 'Community projects on Trello',
             author: 'rachel',
             date: 'February 5, 2015',
