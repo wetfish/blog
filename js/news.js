@@ -10,15 +10,15 @@ $(document).ready(function()
     }, 'html')
 
     var news =
-    [
+    [    
         {
             title: 'Remember when Skype was cool?',
             author: 'rachel',
-            date: 'Friday 13, 2015',
+            date: 'February 13, 2015',
             content:
             [
                 "Back in the day when Skype was still being written by the same people who made Kazaa, the internet was a pretty cool place. \
-                 You could make calls to anyone, the download was only a few megabyes, and behind the scenes it was total P2P cipherpunk beauty.",
+                 You could make calls to anyone, the download was only a few megabytes, and behind the scenes it was total P2P cypherpunk beauty.",
                 "Now a days, we have Tox!",
                 "<a href='https://tox.im/#features'><img src='img/tox-screenie.png'></a>",
                 "<i class='small'>Tox is a peer to peer network for text, audio, and video calls.</i>",
