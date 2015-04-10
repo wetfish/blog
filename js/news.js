@@ -10,7 +10,34 @@ $(document).ready(function()
     }, 'html')
 
     var news =
-    [    
+    [
+        {
+            title: 'My first year of code',
+            author: 'rachel',
+            date: 'April 10, 2015',
+            content:
+            [
+                "<a href='https://github.com/itsrachelfish'><img src='img/1-year-of-code.png'></a>",
+                "<i class='small'>I love when numbers increase in value!</i>",
+                "It's been an exciting ride; my first year of open source programming was full of learning new tools and ways to improve wetfish. \
+                 We now have our own \
+                  <a href='https://github.com/wetfish/login'>oAuth login system</a>, \
+                  <a href='https://github.com/wetfish/services'>IRC services</a>, \
+                  and a <a href='https://github.com/ragnastats/webkore'>browser based client</a> for OpenKore.",
+                "If that's not enough, you can dive into the source code of many classic wetfish projects including \
+                 <a href='https://github.com/wetfish/classic/tree/master/wiki'>the wiki</a>, \
+                 <a href='https://github.com/wetfish/classic/tree/master/funpartyhotel'>fun party hotel</a>, \
+                 and <a href='https://github.com/wetfish/classic/tree/master/weedhat'>weedhat</a>.",
+                "But I'm not here to bore you with lists, I'm here to thank you and the rest of the wetfish community for their contributions and dedication! \
+                 Over a dozen people have joined wetfish on GitHub and it's always a delightful surprise to see that little notification bar light up.",
+                "Shoutouts to <a href='https://github.com/dbladez'>dbladez</a> for writing <a href='https://github.com/wetfish/fishy/blob/master/modules/triplicates.js'>fishy's triplicate detection module</a> and \
+                 <a href='https://github.com/pielover88888'>pielover</a> for being the <a href='https://github.com/wetfish/teeworlds/graphs/contributors'>most active contributor</a> to our Teeworlds server.",
+                 "<3",
+            ],
+
+            tags: ['GitHub', 'Open Source', 'Programming', 'Community']
+        },
+    
         {
             title: 'Remember when Skype was cool?',
             author: 'rachel',
