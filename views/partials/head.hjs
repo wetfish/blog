@@ -11,19 +11,16 @@
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/base/jquery-ui.css" type="text/css" />
 
         <!-- jQuery Transit -->
-        <script src='js/jquery.transit.js'></script>
+        <script src='/js/jquery.transit.js'></script>
 
         <!-- Custom styles -->
-        <link rel='stylesheet' href='css/prolayout.css' type="text/css">
+        <link rel='stylesheet' href='/css/prolayout.css' type="text/css">
 
         <!-- Hacky cloud code -->
-        <script src='js/prolayout.js'></script>
+        <script src='/js/prolayout.js'></script>
 
-        <!-- Hogan Templating -->
-        <script src="js/hogan.js"></script> 
-
-        <!-- News feed -->
-        <script src="js/news.js"></script>
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="/img/ragnarok-fish.png" />
 
         <style>
             .byline {
@@ -44,42 +41,42 @@
     
     <body>
         <div id='stars'>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
-            <div class='star'><img src='img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
+            <div class='star'><img src='/img/sparkle.png'></div>
         </div>
         
         <div id='magic'></div>
@@ -103,60 +100,60 @@
                             
             <div id='clouds'>
                 <div class='cloud'></div>
-                <div class='cloud'><img src='img/clouds/big-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/little-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/big-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/big-medium-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/little-big-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/long-cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/big-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/medium-cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/medium-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/medium-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/big-little-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/little-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/big-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/little-cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/little-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/little-squished-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/medium-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/little-big-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/little-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/big-little-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/little-cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/little-squished-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/long-cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/medium-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/medium-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/big-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/little-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/big-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/big-medium-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/little-big-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/long-cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/big-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/medium-cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/medium-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/medium-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/big-little-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/little-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/big-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/little-cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/little-cloud-with-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/little-squished-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/medium-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/little-big-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/little-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/big-little-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/little-cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/little-squished-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/long-cloud-dust.png'></div>
-                <div class='cloud'><img src='img/clouds/medium-cloud.png'></div>
-                <div class='cloud'><img src='img/clouds/medium-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-medium-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-big-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/long-cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/medium-cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/medium-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/medium-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-little-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-squished-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/medium-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-big-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-little-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-squished-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/long-cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/medium-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/medium-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-medium-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-big-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/long-cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/medium-cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/medium-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/medium-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-little-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-cloud-with-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-squished-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/medium-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-big-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/big-little-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/little-squished-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/long-cloud-dust.png'></div>
+                <div class='cloud'><img src='/img/clouds/medium-cloud.png'></div>
+                <div class='cloud'><img src='/img/clouds/medium-cloud-with-dust.png'></div>
             </div>            
         </div>
         
