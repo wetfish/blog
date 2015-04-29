@@ -30,8 +30,7 @@ module.exports = function(required)
             }
             else
             {
-                res.status(404);
-                res.end('404 - Page Not Found');
+                res.redirect('http://wiki.wetfish.net/' + req.params.page);
             }
         });
     });
