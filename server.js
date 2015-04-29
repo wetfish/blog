@@ -5,6 +5,7 @@ var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 var bodyParser = require('body-parser');
 
+var extend = require('util')._extend;
 var events = require('events')
 var event = new events.EventEmitter();
 
@@ -78,3 +79,12 @@ event.on('message', function(req, res, message)
     
     event.emit('render', req, res, options);
 });
+
+var required =
+{
+    app: app,
+    event: event,
+    model: model
+}
+
+require('./routes/pages')(required);

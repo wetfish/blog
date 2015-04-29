@@ -1,0 +1,16 @@
+            <div id='nav'>
+                <a class='title' href='https://wetfish.net/'><h1>wetfish.net</h1></a>
+                <div class='yellow'>The best internet on the internet</div>
+                            
+                <div class='links'>
+                    <a href='https://github.com/wetfish'><h2>GitHub</h2></a>
+                    <a href='https://trello.com/wetfish'><h2>Trello</h2></a>
+                    <a href='http://wiki.wetfish.net/'><h2>Wiki</h2></a>
+                    <a href='http://wiki.wetfish.net/irc'><h2>IRC</h2></a>
+                    <a href='http://wiki.wetfish.net/mumble'><h2>Mumble</h2></a>
+                </div>
+            </div>
+
+            <div id='content'>
+                <a href="https://login.wetfish.net/" class="right secret" style="line-height: 280%; margin-top: 0.67em">Login?</a>
+
