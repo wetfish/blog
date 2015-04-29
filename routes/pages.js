@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 module.exports = function(required)
 {
     var app = required.app;
@@ -8,4 +10,21 @@ module.exports = function(required)
     {
         event.emit('render', req, res, {view: 'index'});
     });
+
+    app.get('/:page', function(req, res)
+    {
+        fs.exists(__dirname + '/../views/' + req.params.page + '.hjs', function(exists)
+        {
+            if(exists)
+            {
+                event.emit('render', req, res, {view: req.params.page});
+            }
+            else
+            {
+                res.status(404);
+                res.end('404 - Page Not Found');
+            }
+        });
+    });
+
 }
