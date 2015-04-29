@@ -3,12 +3,21 @@ var fs = require('fs');
 module.exports = function(required)
 {
     var app = required.app;
+    var config = required.config;
     var event = required.event;
     var model = required.model;
 
     app.get('/', function(req, res)
     {
-        event.emit('render', req, res, {view: 'index'});
+        event.emit('render', req, res,
+        {
+            view: 'index',
+            news: config.news,
+            partials:
+            {
+                news: 'partials/news'
+            }
+        });
     });
 
     app.get('/:page', function(req, res)

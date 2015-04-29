@@ -5,7 +5,7 @@ var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 var bodyParser = require('body-parser');
 
-var extend = require('util')._extend;
+var extend = require('extend');
 var events = require('events')
 var event = new events.EventEmitter();
 
@@ -46,7 +46,8 @@ event.on('render', function(req, res, options)
         }
     };
 
-    options = extend(defaults, options);
+    // Deep combine our defaults with the requested options
+    options = extend(true, defaults, options);
     res.render(options.view, options);
 });
 
@@ -83,6 +84,7 @@ event.on('message', function(req, res, message)
 var required =
 {
     app: app,
+    config: config,
     event: event,
     model: model
 }

@@ -2,7 +2,7 @@
     {{> sidebar}}
 
     <section class="news">
-        Loading...
+        {{> news}}
     </section>
     
 {{> foot}}
