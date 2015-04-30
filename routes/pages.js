@@ -7,12 +7,34 @@ module.exports = function(required)
     var event = required.event;
     var model = required.model;
 
+    // Display the first 2 news posts
     app.get('/', function(req, res)
     {
+        var news = config.news.slice(0, 2);
+        
         event.emit('render', req, res,
         {
             view: 'index',
-            news: config.news,
+            news: news,
+            partials:
+            {
+                news: 'partials/news'
+            }
+        });
+    });
+
+    // Display the home, except paginated
+    app.get('/page/:index', function(req, res)
+    {
+        var index = parseInt(req.params.index);
+        index--;
+        
+        var news = config.news.slice(index * 2, index * 2 + 2);
+        
+        event.emit('render', req, res,
+        {
+            view: 'index',
+            news: news,
             partials:
             {
                 news: 'partials/news'
