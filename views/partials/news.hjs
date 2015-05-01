@@ -25,3 +25,20 @@
         {{/tags.length}}
     </article>
 {{/news}}
+
+<hr>
+
+You are on page <b>{{page}}</b>
+
+<div class="right pagination">
+    {{#prev}}
+        <a href='/page/{{prev}}'>↩ Go to page {{prev}}</a>
+    {{/prev}}
+
+
+    {{#next}}
+          <a href='/page/{{next}}'>Go to page {{next}} ↪</a>
+    {{/next}}
+</div>
+
+<hr>

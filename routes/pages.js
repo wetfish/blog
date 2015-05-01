@@ -11,11 +11,19 @@ module.exports = function(required)
     app.get('/', function(req, res)
     {
         var news = config.news.slice(0, 2);
+        var next = 0;
+
+        if(config.news.length > 2)
+        {
+            next = 2;
+        }
         
         event.emit('render', req, res,
         {
             view: 'index',
             news: news,
+            next: next,
+            page: 1,
             partials:
             {
                 news: 'partials/news'
@@ -26,15 +34,26 @@ module.exports = function(required)
     // Display the home, except paginated
     app.get('/page/:index', function(req, res)
     {
-        var index = parseInt(req.params.index);
-        index--;
+        // Floats are more fun than ints ^_~
+        var page = parseFloat(req.params.index);
+        var index = page - 1;
         
         var news = config.news.slice(index * 2, index * 2 + 2);
+        var prev = Math.round(page - 1);
+        var next = 0;
+
+        if(config.news.length > index * 2 + 2)
+        {
+            next = Math.floor(page + 1);
+        }
         
         event.emit('render', req, res,
         {
             view: 'index',
             news: news,
+            next: next,
+            prev: prev,
+            page: page,
             partials:
             {
                 news: 'partials/news'
