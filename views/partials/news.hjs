@@ -28,17 +28,18 @@
 
 <hr>
 
-You are on page <b>{{page}}</b>
+<div class="pagination">
+    <div class="right">
+        {{#prev}}
+            <a href='/page/{{prev}}'>↩ Go to page {{prev}}</a>
+        {{/prev}}
 
-<div class="right pagination">
-    {{#prev}}
-        <a href='/page/{{prev}}'>↩ Go to page {{prev}}</a>
-    {{/prev}}
+        {{#next}}
+              <a href='/page/{{next}}'>Go to page {{next}} ↪</a>
+        {{/next}}
+    </div>
 
-
-    {{#next}}
-          <a href='/page/{{next}}'>Go to page {{next}} ↪</a>
-    {{/next}}
+    You are on page <b>{{page}}</b>
 </div>
 
 <hr>
