@@ -40,6 +40,23 @@
             .pagination a {
                 padding-left: 130px;
             }
+
+            .fish {
+                position: relative;
+                width: 100%;
+            }
+
+            .fish img {
+                position: absolute;
+                right: -180px;
+                top: -145px;
+                z-index: -1;
+            }
+
+            #content {
+                position: relative;
+                overflow:hidden;
+            }
         </style>
     </head>
     
