@@ -71,7 +71,7 @@ module.exports = function(required)
             }
             else
             {
-                res.redirect('http://wiki.wetfish.net/' + req.params.page);
+                res.redirect('https://wiki.wetfish.net/' + req.params.page);
             }
         });
     });
