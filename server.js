@@ -90,3 +90,8 @@ var required =
 }
 
 require('./routes/pages')(required);
+
+app.use(function(req, res)
+{
+    res.redirect('https://wiki.wetfish.net' + req.url);
+});

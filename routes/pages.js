@@ -61,7 +61,7 @@ module.exports = function(required)
         });
     });
 
-    app.get('/:page', function(req, res)
+    app.get('/:page', function(req, res, next)
     {
         fs.exists(__dirname + '/../views/' + req.params.page + '.hjs', function(exists)
         {
@@ -71,7 +71,7 @@ module.exports = function(required)
             }
             else
             {
-                res.redirect('https://wiki.wetfish.net/' + req.params.page);
+                next();
             }
         });
     });
