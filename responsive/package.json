@@ -1,0 +1,10 @@
+{
+  "name": "wetfish-corporate",
+  "version": "1.0.0",
+  "author": "Rachel <rachel@wetfish.net>",
+  "description": "The Official Site for Wetfish Enterprises",
+  "dependencies": {
+    "wetfish-basic": "^0.7.6",
+    "wetfish-server": "^0.1.1"
+  }
+}
