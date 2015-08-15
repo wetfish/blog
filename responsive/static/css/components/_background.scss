@@ -81,3 +81,18 @@ body {
         top: 205%;
     }
 }
+
+.star {
+    position: absolute;
+    z-index: -1;
+
+    &.desktop {
+        display: none;
+    }
+
+    @media (min-width: 800px) {
+        &.desktop {
+            display: block;
+        }
+    }
+}

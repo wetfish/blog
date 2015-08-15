@@ -1,5 +1,6 @@
 module.exports = function(server)
 {
+    var helper = server.helper;
     var app = server.app;
     var config = server.config;
     var event = server.event;
@@ -13,7 +14,8 @@ module.exports = function(server)
             partials:
             {
                 background: 'partials/background',
-            }
+            },
+            stars: helper.generateStars(50)
         };
         
         event.emit('render', req, res, options);

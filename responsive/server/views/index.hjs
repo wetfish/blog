@@ -1,6 +1,3 @@
 {{> head}}
-    {{> background}}
-
-    <p>Hi there handsome!!</p>
-    
+    {{> background}}    
 {{> foot}}

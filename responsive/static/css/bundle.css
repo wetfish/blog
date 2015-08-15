@@ -69,3 +69,12 @@ body {
 
 .tropo.sphere {
   top: 205%; }
+
+.star {
+  position: absolute;
+  z-index: -1; }
+  .star.desktop {
+    display: none; }
+  @media (min-width: 800px) {
+    .star.desktop {
+      display: block; } }
