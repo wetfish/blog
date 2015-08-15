@@ -12,42 +12,50 @@ body {
 
 body {
   background-color: #871D85;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin: 0; }
 
-.atmosphere div {
+.background {
+  overflow: hidden;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: -18%;
+  right: 0; }
+
+.atmosphere div {
+  background-color: rgba(170, 210, 255, 0.1);
+  position: absolute;
+  left: -15%;
+  width: 130%;
+  height: 200%;
   border-radius: 100%; }
 
 .exo.sphere {
   background-color: rgba(255, 63, 188, 0.4);
-  top: 8em; }
+  top: 9em; }
 
-.thermo {
-  background-color: rgba(170, 210, 255, 0.1); }
-  .thermo.pause {
-    top: 10em; }
-  .thermo.sphere {
-    top: 12em; }
+.thermo.pause {
+  top: 11.5em; }
 
-.meso {
-  background-color: rgba(170, 210, 255, 0.1); }
-  .meso.pause {
-    top: 14em; }
-  .meso.sphere {
-    top: 15em; }
+.thermo.sphere {
+  top: 15em; }
 
-.strato {
-  background-color: rgba(170, 210, 255, 0.1); }
-  .strato.pause {
-    top: 30%; }
-  .strato.sphere {
-    top: 32%; }
+.meso.pause {
+  top: 17em; }
 
-.tropo {
-  background-color: rgba(170, 210, 255, 0.1); }
-  .tropo.pause {
-    top: 200px; }
-  .tropo.sphere {
-    top: 250px; }
+.meso.sphere {
+  top: 17.3em; }
+
+.strato.pause {
+  top: 100%; }
+
+.strato.sphere {
+  top: 105%; }
+
+.tropo.pause {
+  top: 200%; }
+
+.tropo.sphere {
+  top: 205%; }
