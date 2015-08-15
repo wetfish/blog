@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Abel';
+  src: url("Abel.ttf.woff") format("woff"), url("Abel.ttf.eot"), url("Abel.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  font-family: Tahoma, Helvetica, "Sans Serif";
+  font-size: 10pt;
+  color: #fff;
+  text-shadow: #000 1px 1px 2px; }
+
+body {
+  background-color: #871D85;
+  margin: 0; }
+
+.atmosphere div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%; }
+
+.exo.sphere {
+  background-color: rgba(255, 63, 188, 0.4);
+  top: 8em; }
+
+.thermo {
+  background-color: rgba(170, 210, 255, 0.1); }
+  .thermo.pause {
+    top: 10em; }
+  .thermo.sphere {
+    top: 12em; }
+
+.meso {
+  background-color: rgba(170, 210, 255, 0.1); }
+  .meso.pause {
+    top: 14em; }
+  .meso.sphere {
+    top: 15em; }
+
+.strato {
+  background-color: rgba(170, 210, 255, 0.1); }
+  .strato.pause {
+    top: 30%; }
+  .strato.sphere {
+    top: 32%; }
+
+.tropo {
+  background-color: rgba(170, 210, 255, 0.1); }
+  .tropo.pause {
+    top: 200px; }
+  .tropo.sphere {
+    top: 250px; }

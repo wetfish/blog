@@ -7,6 +7,15 @@ module.exports = function(server)
 
     app.get('/', function(req, res)
     {
-        event.emit('render', req, res, {view: 'index'});
+        var options =
+        {
+            view: 'index',
+            partials:
+            {
+                background: 'partials/background',
+            }
+        };
+        
+        event.emit('render', req, res, options);
     });
 }

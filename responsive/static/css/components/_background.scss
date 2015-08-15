@@ -1,0 +1,64 @@
+body {
+    background-color: #871D85;
+    margin: 0;
+}
+
+.atmosphere div {
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius: 100%;
+}
+
+.exo.sphere {
+    background-color:rgba(255, 63, 188, 0.4);
+    top: 8em;
+}
+
+.thermo {
+   background-color:rgba(170, 210, 255, 0.1);
+
+    &.pause {
+        top: 10em;
+    }
+
+    &.sphere {
+        top: 12em;
+    }
+}
+
+.meso {
+   background-color:rgba(170, 210, 255, 0.1);
+
+    &.pause {
+        top: 14em;
+    }
+
+    &.sphere {
+        top: 15em;
+    }
+}
+
+.strato {
+   background-color:rgba(170, 210, 255, 0.1);
+
+    &.pause {
+        top: 30%;
+    }
+
+    &.sphere {
+        top: 32%;
+    }
+}
+
+.tropo {
+   background-color:rgba(170, 210, 255, 0.1);
+
+    &.pause {
+        top: 200px;
+    }
+
+    &.sphere {
+        top: 250px;
+    }
+}

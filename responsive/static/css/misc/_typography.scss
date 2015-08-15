@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Abel';
+    src: url('Abel.ttf.woff') format('woff'),
+    url('Abel.ttf.eot'),
+    url('Abel.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family:Tahoma, Helvetica, "Sans Serif";
+    font-size:10pt;
+    color:#fff;
+    text-shadow:#000 1px 1px 2px; 
+}
