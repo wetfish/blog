@@ -1,5 +1,18 @@
 section.body {
     position: absolute;
+    width: 1010px;
     z-index: 1;
     top: 1.5em;
+    left: 50%;
+    margin-left: -505px;
+}
+
+section.content {
+    box-sizing: border-box;
+    width:600px;
+    height: 2000px;
+    margin-left:10px;
+    background-color:rgba(0, 0, 0, 0.5);
+    border-left:1px solid #fff;
+    padding:14px;
 }
