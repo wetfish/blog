@@ -1,6 +1,30 @@
+a {
+  color: pink;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+.secret {
+  opacity: 0;
+  transition: opacity 1s; }
+  .secret:hover {
+    opacity: 1; }
+
+.right {
+  float: right; }
+
+.left {
+  float: left; }
+
+.clear {
+  clear: both; }
+
+.yellow {
+  color: yellow; }
+
 @font-face {
-  font-family: 'Abel';
-  src: url("Abel.ttf.woff") format("woff"), url("Abel.ttf.eot"), url("Abel.eot?#iefix") format("embedded-opentype");
+  font-family: "Abel";
+  src: url("/font/Abel.ttf.woff") format("woff"), url("/font/Abel.ttf.eot"), url("/font/Abel.eot?#iefix") format("embedded-opentype");
   font-weight: normal;
   font-style: normal; }
 
@@ -9,6 +33,21 @@ body {
   font-size: 10pt;
   color: #fff;
   text-shadow: #000 1px 1px 2px; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Abel", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0px; }
+
+h1 {
+  font-size: 280%; }
+
+h2 {
+  font-size: 240%; }
+
+h3 {
+  font-size: 160%; }
 
 body {
   background-color: #871D85;
@@ -71,10 +110,35 @@ body {
   top: 205%; }
 
 .star {
-  position: absolute;
-  z-index: -1; }
+  position: absolute; }
   .star.desktop {
     display: none; }
   @media (min-width: 800px) {
     .star.desktop {
       display: block; } }
+
+.sidebar {
+  box-sizing: border-box;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-right: 1px solid #fff;
+  text-align: right;
+  padding: 1em 1em 0 0; }
+  .sidebar .title {
+    color: #fff; }
+    .sidebar .title:hover {
+      text-decoration: none; }
+  .sidebar .links {
+    margin-top: 28px; }
+    .sidebar .links a {
+      margin-right: -1em;
+      padding: 14px;
+      display: block; }
+      .sidebar .links a:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+        text-decoration: none; }
+
+section.body {
+  position: absolute;
+  z-index: 1;
+  top: 1.5em; }

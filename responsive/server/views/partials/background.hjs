@@ -1,4 +1,12 @@
 <div class="background">
+    <div class="stars">
+        {{#stars}}
+            <div class="{{class}}" style="top:{{top}}; left:{{left}}; transform: rotate({{rotate}});">
+                <img src="/img/sparkle.png" style="width:{{width}}">
+            </div>
+        {{/stars}}
+    </div>
+
     <div class="atmosphere">
         <div class="exo sphere"></div>
         <div class="thermo pause"></div>
@@ -9,13 +17,5 @@
         <div class="strato sphere"></div>
         <div class="tropo pause"></div>
         <div class="tropo sphere"></div>
-    </div>
-
-    <div class="stars">
-        {{#stars}}
-            <div class="{{class}}" style="top:{{top}}; left:{{left}}; transform: rotate({{rotate}});">
-                <img src="/img/sparkle.png" style="width:{{width}}">
-            </div>
-        {{/stars}}
     </div>
 </div>

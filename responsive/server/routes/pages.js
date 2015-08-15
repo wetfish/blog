@@ -14,8 +14,10 @@ module.exports = function(server)
             partials:
             {
                 background: 'partials/background',
+                sidebar: 'partials/sidebar',
+                content: 'partials/content',
             },
-            stars: helper.generateStars(50)
+            stars: helper.generateStars(40)
         };
         
         event.emit('render', req, res, options);

@@ -21,7 +21,7 @@ server.helper =
                 class: 'star',
                 top: server.helper.random(0, 25) + 'em',
                 left: server.helper.random(1, 99) + '%',
-                rotate: (server.helper.random(1, 8) * 45) + 'deg',
+                rotate: (Math.floor(server.helper.random(1, 8)) * 45) + 'deg',
                 width: server.helper.random(10, 75) + '%'
             };
 
