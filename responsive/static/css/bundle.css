@@ -27,10 +27,20 @@ body {
 .atmosphere div {
   background-color: rgba(170, 210, 255, 0.1);
   position: absolute;
-  left: -15%;
-  width: 130%;
+  left: -100%;
+  width: 300%;
   height: 200%;
   border-radius: 100%; }
+  @media (min-width: 480px) {
+    .atmosphere div {
+      left: -50%;
+      width: 200%;
+      height: 200%; } }
+  @media (min-width: 800px) {
+    .atmosphere div {
+      left: -15%;
+      width: 130%;
+      height: 200%; } }
 
 .exo.sphere {
   background-color: rgba(255, 63, 188, 0.4);
