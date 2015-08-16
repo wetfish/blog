@@ -12,3 +12,12 @@
     </head>
     
     <body>
+        <div class="stars">
+            {{#stars}}
+                <div class="{{class}}" style="top:{{top}}; left:{{left}}; transform: rotate({{rotate}});">
+                    <img src="/img/sparkle.png" style="width:{{width}}">
+                </div>
+            {{/stars}}
+        </div>
+
+        <div class="atmosphere">

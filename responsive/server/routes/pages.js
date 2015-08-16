@@ -13,7 +13,6 @@ module.exports = function(server)
             view: 'index',
             partials:
             {
-                background: 'partials/background',
                 sidebar: 'partials/sidebar',
                 content: 'partials/content',
             },

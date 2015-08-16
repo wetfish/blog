@@ -1,12 +1,4 @@
 {{> head}}
-    {{> background}}
-
-    <section class="body">
-        {{> sidebar}}
-        {{> content}}
-
-        <div class="clear"></div>
-    </section>
-
-    <div class="clear">&nbsp;</div>
+    {{> sidebar}}
+    {{> content}}
 {{> foot}}
