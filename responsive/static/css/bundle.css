@@ -75,7 +75,7 @@ body {
     .atmosphere {
       background-position: 47%;
       background-size: 300% 100%; } }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     .atmosphere {
       background-position: 47%;
       background-size: 200% 100%; } }
@@ -150,7 +150,7 @@ body {
       display: block; }
       .sidebar .text {
         display: block; } }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     .sidebar {
       width: 400px; } }
   .sidebar .links {
@@ -183,7 +183,7 @@ section.body {
       background: none;
       width: 760px;
       padding: 1.3em; } }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     section.body {
       width: 1010px; } }
 
@@ -199,6 +199,6 @@ section.content {
       margin-top: 0;
       border-left: 1px solid #fff;
       float: right; } }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     section.content {
       width: 600px; } }
