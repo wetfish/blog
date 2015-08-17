@@ -63,15 +63,16 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -18%;
+  left: 0;
   right: 0; }
 
 .atmosphere {
   min-height: 100vh;
   background-image: url(/img/background.svg);
   background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 100%; }
+  background-position: 47%;
+  background-size: 200% 100%;
+  padding-bottom: 4em; }
 
 .stars {
   position: absolute;
@@ -102,7 +103,7 @@ body {
     margin-top: 2em; }
     .sidebar .links a {
       margin-right: -1em;
-      padding: 1em;
+      padding: 1.1em;
       display: block; }
       .sidebar .links a:hover {
         background-color: rgba(0, 0, 0, 0.25);
@@ -110,15 +111,13 @@ body {
 
 section.body {
   width: 1010px;
-  z-index: 1;
-  top: 1.5em;
-  left: 50%;
-  margin-left: -505px; }
+  margin: 0 auto;
+  padding: 1.3em; }
 
 section.content {
   box-sizing: border-box;
   width: 600px;
-  height: 500px;
+  height: 1800px;
   margin-left: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   border-left: 1px solid #fff;
