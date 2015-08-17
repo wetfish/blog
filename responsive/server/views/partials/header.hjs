@@ -1,4 +1,6 @@
 <nav class="header">
+    <img class="hamburger right" src="/img/hamburger.svg">
+
     <a class='title' href='https://wetfish.net/'><h1>wetfish.net</h1></a>
     <div class='yellow'>The best internet on the internet</div>
 </nav>

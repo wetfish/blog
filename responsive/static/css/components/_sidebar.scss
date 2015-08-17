@@ -1,14 +1,30 @@
 .sidebar {
     box-sizing: border-box;
+    position: fixed;
     background-color:rgba(0, 0, 0, 0.5);
-    border-right: 1px solid #fff;
-    text-align:right;
     padding: 1em 1em 0 0;
     display: none;
+
+    &.open {
+        margin-top: 7.5em;
+        display: block;
+        clear: both;
+        width: 100%;
+    }
+
+    .text {
+        display: none;
+    }
     
     @media (min-width: 800px) {
+        border-right: 1px solid #fff;
+        text-align:right;
         width: 250px;
         display: block;
+
+        .text {
+            display: block;
+        }
     }
 
     @media (min-width: 1000px) {
@@ -16,8 +32,12 @@
     }
 
     .links {
-        margin-top:2em;
-
+        margin-top: -1em;
+    
+        @media (min-width: 800px) {
+            margin-top:2em;
+        }
+        
         a {
             margin-right:-1em;
             padding:1.1em;

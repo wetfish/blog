@@ -1,11 +1,19 @@
 .header {
     box-sizing: border-box;
+    position: fixed;
+    height: 7.5em;
+    width: 100%;
     background-color:rgba(0, 0, 0, 0.5);
     padding: 1em 2em 2em;
 
     @media (min-width: 800px) {
         display: none;
         width: 400px;
+    }
+
+    .hamburger {
+        cursor: pointer;
+        padding:0.5em 1em 1em 1em;
     }
 
     .links {

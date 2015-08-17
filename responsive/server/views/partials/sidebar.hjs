@@ -1,7 +1,9 @@
 <nav class='sidebar left'>
-    <a class='title' href='https://wetfish.net/'><h1>wetfish.net</h1></a>
-    <div class='yellow'>The best internet on the internet</div>
-                
+    <div class='text'>
+        <a class='title' href='https://wetfish.net/'><h1>wetfish.net</h1></a>
+        <div class='yellow'>The best internet on the internet</div>
+    </div>
+    
     <div class='links'>
         <a href='https://github.com/wetfish'><h2>GitHub</h2></a>
         <a href='https://trello.com/wetfish'><h2>Trello</h2></a>
