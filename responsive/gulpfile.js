@@ -14,6 +14,28 @@ var bundler = watchify(browserify({debug: true}));
 // Object to handle bundling / compilation tasks
 var bundle =
 {
+    deps: function()
+    {
+        var dependencies =
+        [
+            './static/js/deps/basic.js',    // Load wetfish basic first
+            './static/js/deps/*.js',        // Load everything else
+        ];
+        
+        gulp.src(dependencies)
+        .pipe(concat('deps.js'))
+        .pipe(gulp.dest('./static/js'));
+    },
+    
+    js: function()
+    {
+        bundler.bundle()
+        // Log errors if they happen
+        .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+        .pipe(source('bundle.js'))
+        .pipe(gulp.dest('./static/js'));
+    },
+
     scss: function()
     {
         var options =
@@ -37,9 +59,16 @@ function watch()
     });
 }
 
+// Add main script file to the bundle
+bundler.add('./static/js/main.js');
+bundler.on('update', bundle.js);
+bundler.on('log', gutil.log);
+
 // By default, do everything
-gulp.task('default', ['scss', 'watch']);
+gulp.task('default', ['deps', 'js', 'scss', 'watch']);
 
 // Separate tasks for individual things
+gulp.task('deps', bundle.deps);
+gulp.task('js', bundle.js);
 gulp.task('scss', bundle.scss);
 gulp.task('watch', watch);

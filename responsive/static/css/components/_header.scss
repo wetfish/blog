@@ -13,7 +13,12 @@
 
     .hamburger {
         cursor: pointer;
-        padding:0.5em 1em 1em 1em;
+        width: 20%;
+
+        @media (min-width: 400px) {
+            width: auto;
+            padding:0.5em 1em 1em 1em;
+        }
     }
 
     .links {
