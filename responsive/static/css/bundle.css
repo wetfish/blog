@@ -63,16 +63,9 @@ body {
   overflow-y: auto;
   margin: 0; }
 
-.background {
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; }
-
 .atmosphere {
   min-height: 100vh;
+  height: 100%;
   background-image: url(/img/background.svg);
   background-repeat: no-repeat;
   padding-bottom: 4em;
@@ -137,8 +130,7 @@ body {
   transition: opacity 0.4s;
   width: 100%;
   opacity: 0;
-  z-index: -1;
-  margin-top: 7.5em; }
+  z-index: -1; }
   .sidebar.open {
     z-index: 10;
     opacity: 1;
@@ -176,10 +168,19 @@ body {
 
 section.body {
   width: 100%;
-  padding: 1.3em 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 8.5em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
   margin: 0 auto; }
   @media (min-width: 800px) {
     section.body {
+      position: relative;
+      top: 0;
+      background: none;
       width: 760px;
       padding: 1.3em; } }
   @media (min-width: 1000px) {
@@ -188,13 +189,12 @@ section.body {
 
 section.content {
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.5);
   height: 1800px;
-  margin-top: 7.5em;
   padding: 1em;
   width: 100%; }
   @media (min-width: 800px) {
     section.content {
+      background-color: rgba(0, 0, 0, 0.5);
       width: 500px;
       margin-top: 0;
       border-left: 1px solid #fff;
