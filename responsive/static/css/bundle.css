@@ -49,6 +49,11 @@ h2 {
 h3 {
   font-size: 160%; }
 
+.title {
+  color: #fff; }
+  .title:hover {
+    text-decoration: none; }
+
 html, body {
   min-height: 100vh; }
 
@@ -70,9 +75,17 @@ body {
   min-height: 100vh;
   background-image: url(/img/background.svg);
   background-repeat: no-repeat;
-  background-position: 47%;
-  background-size: 200% 100%;
-  padding-bottom: 4em; }
+  padding-bottom: 4em;
+  background-position: 45%;
+  background-size: 400% 100%; }
+  @media (min-width: 800px) {
+    .atmosphere {
+      background-position: 47%;
+      background-size: 300% 100%; } }
+  @media (min-width: 1000px) {
+    .atmosphere {
+      background-position: 47%;
+      background-size: 200% 100%; } }
 
 .stars {
   position: absolute;
@@ -88,17 +101,38 @@ body {
     .star.desktop {
       display: block; } }
 
+.header {
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1em 2em 2em; }
+  @media (min-width: 800px) {
+    .header {
+      display: none;
+      width: 400px; } }
+  .header .links {
+    margin-top: 2em; }
+    .header .links a {
+      margin-right: -1em;
+      padding: 1.1em;
+      display: block; }
+      .header .links a:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+        text-decoration: none; }
+
 .sidebar {
   box-sizing: border-box;
-  width: 400px;
   background-color: rgba(0, 0, 0, 0.5);
   border-right: 1px solid #fff;
   text-align: right;
-  padding: 1em 1em 0 0; }
-  .sidebar .title {
-    color: #fff; }
-    .sidebar .title:hover {
-      text-decoration: none; }
+  padding: 1em 1em 0 0;
+  display: none; }
+  @media (min-width: 800px) {
+    .sidebar {
+      width: 250px;
+      display: block; } }
+  @media (min-width: 1000px) {
+    .sidebar {
+      width: 400px; } }
   .sidebar .links {
     margin-top: 2em; }
     .sidebar .links a {
@@ -110,15 +144,28 @@ body {
         text-decoration: none; }
 
 section.body {
-  width: 1010px;
-  margin: 0 auto;
-  padding: 1.3em; }
+  width: 100%;
+  padding: 1.3em 0;
+  margin: 0 auto; }
+  @media (min-width: 800px) {
+    section.body {
+      width: 760px;
+      padding: 1.3em; } }
+  @media (min-width: 1000px) {
+    section.body {
+      width: 1010px; } }
 
 section.content {
   box-sizing: border-box;
-  width: 600px;
-  height: 1800px;
-  margin-left: 10px;
   background-color: rgba(0, 0, 0, 0.5);
-  border-left: 1px solid #fff;
-  padding: 14px; }
+  height: 1800px;
+  padding: 1em;
+  width: 100%; }
+  @media (min-width: 800px) {
+    section.content {
+      width: 500px;
+      border-left: 1px solid #fff;
+      float: right; } }
+  @media (min-width: 1000px) {
+    section.content {
+      width: 600px; } }

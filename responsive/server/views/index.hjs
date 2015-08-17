@@ -1,4 +1,6 @@
 {{> head}}
+    {{> header}}
+
     <section class="body">
         {{> sidebar}}
         {{> content}}

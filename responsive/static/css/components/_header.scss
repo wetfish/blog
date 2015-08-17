@@ -1,17 +1,10 @@
-.sidebar {
+.header {
     box-sizing: border-box;
     background-color:rgba(0, 0, 0, 0.5);
-    border-right: 1px solid #fff;
-    text-align:right;
-    padding: 1em 1em 0 0;
-    display: none;
-    
-    @media (min-width: 800px) {
-        width: 250px;
-        display: block;
-    }
+    padding: 1em 2em 2em;
 
-    @media (min-width: 1000px) {
+    @media (min-width: 800px) {
+        display: none;
         width: 400px;
     }
 

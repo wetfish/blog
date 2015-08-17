@@ -1,15 +1,33 @@
 section.body {
-    width: 1010px;
+    width: 100%;
+    padding: 1.3em 0;
+
+    @media (min-width: 800px) {
+        width: 760px;
+        padding: 1.3em;
+    }
+
+    @media (min-width: 1000px) {
+        width: 1010px;
+    }
+    
     margin: 0 auto;
-    padding: 1.3em;
 }
 
 section.content {
     box-sizing: border-box;
-    width:600px;
-    height: 1800px;
-    margin-left:10px;
     background-color:rgba(0, 0, 0, 0.5);
-    border-left:1px solid #fff;
-    padding:14px;
+    height: 1800px;
+    padding:1em;
+    width: 100%;
+    
+    @media (min-width: 800px) {
+        width:500px;
+        border-left:1px solid #fff;
+        float: right;
+    }
+
+    @media (min-width: 1000px) {
+        width:600px;
+    }
 }

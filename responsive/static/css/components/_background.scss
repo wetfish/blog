@@ -22,9 +22,20 @@ body {
     min-height: 100vh;
     background-image: url(/img/background.svg);
     background-repeat: no-repeat;
-    background-position: 47%;
-    background-size: 200% 100%;
     padding-bottom: 4em;
+
+    background-position: 45%;
+    background-size: 400% 100%;
+
+    @media (min-width: 800px) {
+        background-position: 47%;
+        background-size: 300% 100%;
+    }
+
+    @media (min-width: 1000px) {
+        background-position: 47%;
+        background-size: 200% 100%;
+    }
 }
 
 .stars {
