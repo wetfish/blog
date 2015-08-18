@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>wetfish.net - The best internet on the internet</title>
+        <title>Wetfish - The best internet on the internet</title>
 
         <!-- Custom styles -->
         <link rel="stylesheet" href="/css/bundle.css" type="text/css">
@@ -22,6 +22,60 @@
                     <img src="/img/sparkle.png" style="width:{{width}}">
                 </div>
             {{/stars}}
+        </div>
+
+        <div class="clouds">
+            <svg class="cloud path" viewBox="0 0 800 400" preserveAspectRatio="none">
+                <path id="path" d="M -250 300 q 350 -50 1300 100" stroke="none" stroke-width="1" stroke-dasharray="6, 8" fill="none" />
+            </svg>
+
+            <svg class="cloud" viewBox="0 0 800 800" preserveAspectRatio="none">
+                <image id="big-cloud" width="250" height="100" xlink:href="big-cloud.png" transform="translate(0, -100)" />
+
+                <animateMotion
+                    xlink:href="#big-cloud"
+                    dur="100s" 
+                    begin="-5s"
+                    fill="freeze"
+                    rotate="auto"
+                    repeatCount="indefinite">
+                    <mpath xlink:href="#path" />
+                </animateMotion>
+            </svg>
+
+            <svg class="cloud" viewBox="0 0 800 800" preserveAspectRatio="none">
+                <image id="cloud-dust" width="100" height="77" xlink:href="cloud-dust.png" transform="translate(0, -150)" />
+
+                <!-- We have to select this by ID because querySelectorAll doesn't work for animateMotion in chrome (chrome is dumb) -->
+                <!-- Without a default duration the animation never triggers in chrome and sometimes messes up in firefox -->
+                <animateMotion
+                    id="chromesucks"
+                    xlink:href="#cloud-dust"
+                    dur="200s" 
+                    begin="-100s"
+                    fill="freeze"
+                    rotate="auto"
+                    repeatCount="indefinite">
+                    <mpath xlink:href="#path" />
+                </animateMotion>
+            </svg>
+
+            <svg class="cloud" viewBox="0 0 800 800" preserveAspectRatio="none">
+                <image id="little-cloud" width="135" height="75" xlink:href="little-cloud.png" transform="translate(0, -50)" />
+
+                <!-- We have to select this by ID because querySelectorAll doesn't work for animateMotion in chrome (chrome is dumb) -->
+                <!-- Without a default duration the animation never triggers in chrome and sometimes messes up in firefox -->
+                <animateMotion
+                    id="chromesucks"
+                    xlink:href="#little-cloud"
+                    dur="300s" 
+                    begin="-100s"
+                    fill="freeze"
+                    rotate="auto"
+                    repeatCount="indefinite">
+                    <mpath xlink:href="#path" />
+                </animateMotion>
+            </svg>
         </div>
 
         <div class="atmosphere">

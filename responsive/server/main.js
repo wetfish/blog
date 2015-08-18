@@ -19,7 +19,7 @@ server.helper =
             var star =
             {
                 class: 'star',
-                top: server.helper.random(0, 25) + 'em',
+                top: server.helper.random(0, 30) + '%',
                 left: server.helper.random(1, 99) + '%',
                 rotate: (Math.floor(server.helper.random(1, 8)) * 45) + 'deg',
                 width: server.helper.random(10, 75) + '%'
