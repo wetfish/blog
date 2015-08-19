@@ -4,11 +4,21 @@ function resize()
     var width = Math.max($('body').width(), $(window).width('outer'));
     height -= 40;
 
-    $('.clouds, .cloud').style({height: height + 'px', width: 'auto'});
+    // Determine atmosphere size
+    var atmosphere =
+    {
+        background: $('.atmosphere').style('background-size').split(' ')};
+    }
+    
+    console.log(atmosphere);
+
+    $('.path').height();
+
+    $('.clouds, .cloud').style({height: height + 'px', width: '100%'});
     
     $('.cloud').each(function()
     {
-        $(this).transform('translateY', height / 2 + 'px');
+        $(this).transform('translateY', height / 2.5 + 'px');
     });
 }
 
