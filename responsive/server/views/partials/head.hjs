@@ -27,56 +27,43 @@
         <div class="clouds">
             <svg class="path" viewBox="543 -138 1337 420" width="1337" height="420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                 <style type="text/css">
-                    .path{transform:translate(-70px, 150px);fill:none;stroke:#fff;stroke-miterlimit:10;}
+                    .cloud-path{fill:none;stroke:#fff;stroke-miterlimit:10;}
                 </style>
                 
-                <path id="path" class="path" d="M2262.5,583C2009.5,238,1577.5-2.4,1095.6-2.4C536.1-2.4,108.7,291-86.3,583"/>
+                <path id="path" class="cloud-path" d="M2262.5,583 C2009.5,238,1577.5-2.4,1095.6-2.4 C536.1-2.4,108.7,291-86.3,583" preserveAspectRatio="none"/>
             </svg>
 
-
-            <svg class="cloud" viewBox="0 0 800 800">
-                <image id="big-cloud" width="250" height="100" xlink:href="big-cloud.png" transform="translate(0, -100)" />
+            <svg class="cloud" viewBox="543 -138 1337 420" width="1337" height="420" preserveAspectRatio="none">
+                <image id="big-cloud" width="100" height="100" xlink:href="big-cloud.png" transform="translate(0, -20)" />
+                <image id="cloud-dust" width="100" height="77" xlink:href="cloud-dust.png" transform="translate(0, -150)" />
+                <image id="little-cloud" width="135" height="75" xlink:href="little-cloud.png" transform="translate(0, -50)" />
 
                 <animateMotion
                     xlink:href="#big-cloud"
-                    dur="5s" 
-                    begin="-5s"
+                    dur="50s" 
+                    begin="-20s"
                     fill="freeze"
-                    rotate="auto"
+                    rotate="auto-reverse"
                     repeatCount="indefinite">
                     <mpath xlink:href="#path" />
                 </animateMotion>
-            </svg>
 
-            <svg class="cloud" viewBox="0 0 800 800">
-                <image id="cloud-dust" width="100" height="77" xlink:href="cloud-dust.png" transform="translate(0, -150)" />
-
-                <!-- We have to select this by ID because querySelectorAll doesn't work for animateMotion in chrome (chrome is dumb) -->
-                <!-- Without a default duration the animation never triggers in chrome and sometimes messes up in firefox -->
                 <animateMotion
-                    id="chromesucks"
                     xlink:href="#cloud-dust"
-                    dur="200s" 
-                    begin="-100s"
+                    dur="50s" 
+                    begin="-15s"
                     fill="freeze"
-                    rotate="auto"
+                    rotate="auto-reverse"
                     repeatCount="indefinite">
                     <mpath xlink:href="#path" />
                 </animateMotion>
-            </svg>
 
-            <svg class="cloud" viewBox="0 0 800 800">
-                <image id="little-cloud" width="135" height="75" xlink:href="little-cloud.png" transform="translate(0, -50)" />
-
-                <!-- We have to select this by ID because querySelectorAll doesn't work for animateMotion in chrome (chrome is dumb) -->
-                <!-- Without a default duration the animation never triggers in chrome and sometimes messes up in firefox -->
                 <animateMotion
-                    id="chromesucks"
                     xlink:href="#little-cloud"
-                    dur="300s" 
-                    begin="-100s"
+                    dur="50s" 
+                    begin="-10s"
                     fill="freeze"
-                    rotate="auto"
+                    rotate="auto-reverse"
                     repeatCount="indefinite">
                     <mpath xlink:href="#path" />
                 </animateMotion>

@@ -94,8 +94,16 @@ body {
     .star.desktop {
       display: block; } }
 
+.path, .cloud {
+  transform: translate(-33.7%, 0%); }
+  @media (min-width: 800px) {
+    .path, .cloud {
+      transform: translate(-31.31%, 0%); } }
+  @media (min-width: 1100px) {
+    .path, .cloud {
+      transform: translate(-23.5%, 0%); } }
+
 .clouds {
-  overflow: hidden;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -104,6 +112,9 @@ body {
 
 .cloud {
   position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   display: none; }
 
 .header {
