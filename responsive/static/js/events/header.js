@@ -1,6 +1,6 @@
 function resize()
 {
-    var height = $('.content').height();
+    var height = $('section.content').height();
     $('body, .stars').style({height: height + 'px'});
 }
 

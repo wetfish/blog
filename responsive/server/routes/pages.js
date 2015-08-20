@@ -61,7 +61,9 @@ module.exports = function(server)
             {
                 sidebar: 'partials/sidebar',
                 news: 'partials/news'
-            }
+            },
+            stars: helper.generateStars(40),
+            clouds: helper.generateClouds()
         });
     });
 
