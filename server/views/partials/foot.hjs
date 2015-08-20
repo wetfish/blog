@@ -1,4 +1,7 @@
             <div class="clear"></div>
         </div> <!-- Atmosphere -->
+
+        <div class="is-mobile"></div>
+        <div class="is-desktop"></div>
     </body>
 </html>

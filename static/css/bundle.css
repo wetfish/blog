@@ -22,6 +22,18 @@ a {
 .yellow {
   color: yellow; }
 
+.is-mobile {
+  display: block; }
+  @media (min-width: 800px) {
+    .is-mobile {
+      display: none; } }
+
+.is-desktop {
+  display: none; }
+  @media (min-width: 800px) {
+    .is-desktop {
+      display: block; } }
+
 @font-face {
   font-family: "Abel";
   src: url("/font/Abel.ttf.woff") format("woff"), url("/font/Abel.ttf.eot"), url("/font/Abel.eot?#iefix") format("embedded-opentype");

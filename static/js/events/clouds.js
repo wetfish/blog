@@ -38,6 +38,22 @@ function resize()
         $(this).attr('width', cloud.width * difference);
         $(this).attr('height', cloud.height * difference);
     });
+
+    // Pause cloud animations on mobile
+    if($('.is-mobile').style('display') == 'block')
+    {
+        $('svg').each(function()
+        {
+            this.pauseAnimations();
+        });
+    }
+    else
+    {
+        $('svg').each(function()
+        {
+            this.unpauseAnimations();
+        });
+    }
 }
 
 $(document).ready(function()
