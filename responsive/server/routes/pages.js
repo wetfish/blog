@@ -16,7 +16,8 @@ module.exports = function(server)
                 sidebar: 'partials/sidebar',
                 content: 'partials/content',
             },
-            stars: helper.generateStars(40)
+            stars: helper.generateStars(40),
+            clouds: helper.generateClouds()
         };
         
         event.emit('render', req, res, options);

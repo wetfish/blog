@@ -33,12 +33,10 @@ function resize()
             $(this).data('height', cloud.height);
         }
 
-        var difference = $('body').height() / $(window).height() / 2;
+        var difference = Math.min(0.75, ($('body').height() / $(window).height()) / 4);
 
         $(this).attr('width', cloud.width * difference);
         $(this).attr('height', cloud.height * difference);
-
-        console.log(atmosphere.height * 0.1);
     });
 }
 
