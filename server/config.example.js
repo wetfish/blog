@@ -2,11 +2,14 @@
 
 module.exports =
 {
-    session:
-    {
-        secret: 'secret data for generating session IDs'
-    },
+    port: 2304,
 
+    // Path to static files
+    static: __dirname + '/../static',
+
+    // Path to views
+    views: __dirname + '/views',
+    
     news:
     [
         {
