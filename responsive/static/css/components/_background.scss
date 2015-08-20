@@ -52,6 +52,7 @@ body {
 }
 
 .path, .cloud {
+    display: none;
     transform: translate(-33.7%, 0%);
 
     @media (min-width: 800px) {
@@ -76,5 +77,4 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
-    display: none;
 }

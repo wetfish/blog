@@ -95,6 +95,7 @@ body {
       display: block; } }
 
 .path, .cloud {
+  display: none;
   transform: translate(-33.7%, 0%); }
   @media (min-width: 800px) {
     .path, .cloud {
@@ -114,8 +115,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
-  display: none; }
+  z-index: 1; }
 
 .header {
   box-sizing: border-box;
@@ -212,7 +212,7 @@ section.body {
 
 section.content {
   box-sizing: border-box;
-  height: 5000px;
+  height: 3000px;
   padding: 1em;
   width: 100%; }
   @media (min-width: 800px) {

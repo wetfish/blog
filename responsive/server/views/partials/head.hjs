@@ -25,18 +25,18 @@
         </div>
 
         <div class="clouds">
-            <svg class="path" viewBox="543 -138 1337 420" width="1337" height="420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <svg class="path" viewBox="543 -138 1337 420" width="1337" height="420" xmlns="http://www.w3.org/2000/svg">
                 <style type="text/css">
-                    .cloud-path{fill:none;stroke:#fff;stroke-miterlimit:10;}
+                    .cloud-path{fill:none;stroke:none;}
                 </style>
                 
-                <path id="path" class="cloud-path" d="M2262.5,583 C2009.5,238,1577.5-2.4,1095.6-2.4 C536.1-2.4,108.7,291-86.3,583" preserveAspectRatio="none"/>
+                <path id="path" class="cloud-path" d="M2262.5,583 C2009.5,238,1577.5-2.4,1095.6-2.4 C536.1-2.4,108.7,291-86.3,583" />
             </svg>
 
-            <svg class="cloud" viewBox="543 -138 1337 420" width="1337" height="420" preserveAspectRatio="none">
-                <image id="big-cloud" width="100" height="100" xlink:href="big-cloud.png" transform="translate(0, -20)" />
-                <image id="cloud-dust" width="100" height="77" xlink:href="cloud-dust.png" transform="translate(0, -150)" />
-                <image id="little-cloud" width="135" height="75" xlink:href="little-cloud.png" transform="translate(0, -50)" />
+            <svg class="cloud" viewBox="543 -138 1337 420" width="1337" height="420">
+                <image id="big-cloud" width="100" height="100" xlink:href="big-cloud.png" transform="translate(0, 200)" />
+                <image id="cloud-dust" width="100" height="77" xlink:href="cloud-dust.png" transform="translate(0, 100)" />
+                <image id="little-cloud" width="135" height="75" xlink:href="little-cloud.png" transform="translate(0, 500)" />
 
                 <animateMotion
                     xlink:href="#big-cloud"
