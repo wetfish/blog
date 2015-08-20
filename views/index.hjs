@@ -1,8 +1,0 @@
-{{> head}}
-    {{> sidebar}}
-
-    <section class="news">
-        {{> news}}
-    </section>
-    
-{{> foot}}

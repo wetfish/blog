@@ -1,0 +1,38 @@
+Source code
+============
+AGPLv3 license, as per LICENSE file included in this project
+
+
+Images
+=======
+ "Background" (img/background.svg)
+    - Pink atmosphere background image
+    - Creative commons with attribution
+ 
+ "Clouds" (img/clouds/*.png)
+    - All cloud images that appear in the background
+    - Creative commons with attribution
+
+ "Stars" (img/sparkle.png)
+    - Stars that appear in the background
+    - Originally found in an image from Ragnarok Online, © GRAVITY Co., Ltd. & Lee Myung-jin
+
+ "Favicon" (img/ragnarok-fish.png)
+    - Bookmark / browser tab icon
+    - An item sprite from Ragnarok Online, © GRAVITY Co., Ltd. & Lee Myung-jin
+
+ "Hamburger" (img/hamburger.svg)
+    - Creative commons with attribution, found on Wikipedia
+    - Original author: https://github.com/break24/PhantomOpenEmoji
+
+ "Construction Truck" (img/under-construction-truck.gif)
+    - Source / license unknown
+    - Found via image search for "under construction"
+    - Appears on dozens of other sites
+
+
+Fonts
+======
+ "Abel" font face
+    - Downloaded from http://webfonts.ffonts.net/Abel.font.download
+    - Copyright (c) 2011, Matthew Desmond (http://www.madtype.com | mattdesmond@gmail.com), with Reserved Font Name Abel.
