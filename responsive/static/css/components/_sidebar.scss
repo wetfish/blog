@@ -1,7 +1,7 @@
 .sidebar {
     box-sizing: border-box;
     position: fixed;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:rgba(0, 0, 0, 0.75);
     padding: 1em 1em 0 0;
     transition: opacity 0.4s;
     width: 100%;
@@ -20,6 +20,7 @@
     }
     
     @media (min-width: 800px) {
+        background-color:rgba(0, 0, 0, 0.5);
         opacity: 1;
         position: static;
         z-index: 10;
