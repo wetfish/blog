@@ -1,0 +1,45 @@
+{{#news}}
+    <article>
+        <h1 class="title">{{title}}</h1>
+
+        <div class="byline">
+            Posted by <strong class="author">{{author}}</strong> on {{date}}
+        </div>
+        
+        <div class="content">
+            {{#content}}
+                <p>{{{.}}}</p>
+            {{/content}}
+        </div>
+
+        {{#tags.length}}
+            <div class="tags">
+                Tagged:
+                
+                <ul>
+                    {{#tags}}
+                        <li>{{.}}</li>
+                    {{/tags}}
+                </ul>
+            </div>
+        {{/tags.length}}
+    </article>
+{{/news}}
+
+<hr>
+
+<div class="pagination">
+    <div class="right">
+        {{#prev}}
+            <a href='/page/{{prev}}'>↩ Go to page {{prev}}</a>
+        {{/prev}}
+
+        {{#next}}
+              <a href='/page/{{next}}'>Go to page {{next}} ↪</a>
+        {{/next}}
+    </div>
+
+    You are on page <b>{{page}}</b>
+</div>
+
+<hr>

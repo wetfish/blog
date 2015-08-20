@@ -205,7 +205,6 @@ section.body {
 
 section.content {
   box-sizing: border-box;
-  height: 1500px;
   padding: 1em;
   width: 100%; }
   @media (min-width: 800px) {

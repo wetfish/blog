@@ -3,6 +3,15 @@
 
     <section class="body">
         {{> sidebar}}
-        {{> content}}
+            
+        <section class="content">
+            <a href="https://login.wetfish.net/" class="right secret" style="line-height: 280%; margin-top: 0.67em">Login?</a>
+
+            <section class="news">
+                {{> news}}
+            </section>
+
+            <a href="https://login.wetfish.net/" class="right secret" style="line-height: 280%; margin-top: 0.67em">Login?</a>
+        </section>
     </section>
 {{> foot}}
