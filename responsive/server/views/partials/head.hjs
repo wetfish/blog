@@ -34,14 +34,14 @@
             </svg>
 
             <svg class="cloud" viewBox="543 -138 1337 420" width="1337" height="420">
-                <image id="big-cloud" width="100" height="100" xlink:href="big-cloud.png" transform="translate(0, 200)" />
+                <image id="big-cloud" width="100" height="100" xlink:href="big-cloud.png" transform="translate(0, 50)" />
                 <image id="cloud-dust" width="100" height="77" xlink:href="cloud-dust.png" transform="translate(0, 100)" />
-                <image id="little-cloud" width="135" height="75" xlink:href="little-cloud.png" transform="translate(0, 500)" />
+                <image id="little-cloud" width="135" height="75" xlink:href="little-cloud.png" transform="translate(0, 50)" />
 
                 <animateMotion
                     xlink:href="#big-cloud"
                     dur="50s" 
-                    begin="-20s"
+                    begin="-25s"
                     fill="freeze"
                     rotate="auto-reverse"
                     repeatCount="indefinite">
@@ -51,7 +51,7 @@
                 <animateMotion
                     xlink:href="#cloud-dust"
                     dur="50s" 
-                    begin="-15s"
+                    begin="-30s"
                     fill="freeze"
                     rotate="auto-reverse"
                     repeatCount="indefinite">

@@ -53,15 +53,7 @@ body {
 
 .path, .cloud {
     display: none;
-    transform: translate(-33.7%, 0%);
-
-    @media (min-width: 800px) {
-        transform: translate(-31.31%, 0%);
-    }
-
-    @media (min-width: 1100px) {
-        transform: translate(-23.5%, 0%);
-    }
+    transform: scaleX(-1) translate(50%, 0%);
 }
 
 .clouds {
@@ -76,5 +68,4 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
 }
