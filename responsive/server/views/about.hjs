@@ -1,0 +1,53 @@
+{{> head}}
+    {{> header}}
+
+    <section class="body">
+        {{> sidebar}}
+        
+        <section class="content">
+            <a href="https://login.wetfish.net/" class="right secret" style="line-height: 280%; margin-top: 0.67em">Login?</a>
+
+            <h1>What is wetfish?</h1>
+
+            <p>
+                Wetfish is a creative community founded on the ideals of transparency and participation.
+                We're an eclectic mix of developers, artists, and students&mdash;working together to preserve the magic of the 'net.
+            <p>
+
+            <p>
+                Despite being scattered across the globe, technology unites us. And through the years we've learned to call this place our home.
+            </p>
+
+            <h2>Participation?</h2>
+
+            <p>
+                Everybody in Wetfish contributes in some way.
+                From the big things like writing software or creating beautiful artwork,
+                to the little things like offering advice or sharing something to laugh at.
+            </p>
+
+            <p>
+                We facilitate participation by offering real-time communication platforms for both text and voice.
+                Want to get involved? All of our projects are tracked on <a href='https://wetfish.net/trello'>Trello</a>, a kanban style platform for project management.
+                And of course all the code behind Wetfish is available on <a href='https://github.com/wetfish'>GitHub</a>.
+            </p>
+
+            <p>
+                Whether you're a mathematician or an engineer, an artist or musician, or even if you just work in retail, Wetfish would love to meet you!
+            </p>
+
+            <h2>Transparency?</h2>
+
+            <p>
+                We believe transparency is important across all scales.
+                From the design of an operating system to the ingredients in the food you eat, information is a vital component of our lives.
+                Restricting access to that information only hampers an individual's ability to make decisions and explore new uses for it.
+            </p>
+
+            <p>
+                At Wetfish, transparency means we're open about what's happening in the community and where we want to take it.
+                We're staunch supporters of the open-source movement and believe that systems should always be available for inspection by those who use it.
+            </p>
+        </section>
+    </section>
+{{> foot}}

@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 module.exports = function(server)
 {
     var helper = server.helper;
@@ -73,7 +75,16 @@ module.exports = function(server)
         {
             if(exists)
             {
-                event.emit('render', req, res, {view: req.params.page});
+                event.emit('render', req, res,
+                {
+                    view: req.params.page,
+                    partials:
+                    {
+                        sidebar: 'partials/sidebar',
+                    },
+                    stars: helper.generateStars(40),
+                    clouds: helper.generateClouds()
+                });
             }
             else
             {
