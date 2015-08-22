@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Sticky header</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Custom scripts -->
+        <script src="/js/deps.js"></script>
+        <script src="/js/bundle.js"></script>
+
+        <style>
+            body {
+                margin: 0;
+                background-color: #871D85;
+                max-height: 100vh;
+                overflow: hidden;
+            }
+
+            .background {
+                background-image: url(/img/background.svg);
+                background-repeat: no-repeat;
+                padding-bottom: 4em;
+
+                background-position: 45%;
+                background-size: 400% 100%;
+            }
+
+            .header {
+                background-color:rgba(0, 0, 0, 0.5);
+                width: 100%;
+                position: fixed;
+                height: 4em;
+            }
+
+            .content-wrap {
+                position: fixed;
+                background-color:rgba(0, 0, 0, 0.5);
+                top: 5em;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                overflow: hidden;
+                overflow-y: scroll;
+            }
+
+            .content {
+                height: 2000px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="background">
+            <nav class="header">
+                Hello world!
+            </nav>
+
+            <div class="content-wrap">
+                <section class="content">
+                    This is the content!
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

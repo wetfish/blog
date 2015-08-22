@@ -1,17 +1,14 @@
 html, body {
     min-height: 100vh;
+    overflow: hidden;
 }
 
 body {
     background-color: #871D85;
-    overflow-x: hidden;
-    overflow-y: auto;
     margin: 0;
 }
 
 .atmosphere {
-    min-height: 100vh;
-    height: 100%;
     background-image: url(/img/background.svg);
     background-repeat: no-repeat;
     padding-bottom: 4em;
