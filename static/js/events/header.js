@@ -1,7 +1,8 @@
 function resize()
 {
-    var height = $('section.content').height();
-    $('body, .stars').style({height: height + 'px'});
+    var header = $('nav.header').height('outer');
+    var content = $('section.content').height();
+    $('body, .stars').style({height: header + content + 'px'});
 }
 
 $(document).ready(function()

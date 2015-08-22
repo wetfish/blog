@@ -36,7 +36,7 @@
                 <path id="path" class="cloud-path" d="M2262.5,583 C2009.5,238,1577.5-2.4,1095.6-2.4 C536.1-2.4,108.7,291-86.3,583" />
             </svg>
 
-            <svg class="cloud" viewBox="543 -138 1337 420" width="1337" height="420">
+            <svg class="cloud" viewBox="543 -138 1337 420" width="1337" height="420" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 {{#clouds}}
                     <image id="cloud-{{index}}" width="{{width}}" height="{{height}}" xlink:href="/img/clouds/{{name}}" transform="translate({{left}}, {{top}})" />
 

@@ -1,5 +1,27 @@
 function resize()
 {
+    // Pause cloud animations on mobile
+    if($('.is-mobile').style('display') == 'block')
+    {
+        $('.path, .cloud').style({display: 'none'});
+
+        $('svg').each(function()
+        {
+            this.pauseAnimations();
+        });
+
+        return;
+    }
+    else
+    {
+        $('.path, .cloud').style({display: 'block'});
+
+        $('svg').each(function()
+        {
+            this.unpauseAnimations();
+        });
+    }
+
     // Determine atmosphere dimensions
     var atmosphere =
     {
@@ -38,29 +60,12 @@ function resize()
         $(this).attr('width', cloud.width * difference);
         $(this).attr('height', cloud.height * difference);
     });
-
-    // Pause cloud animations on mobile
-    if($('.is-mobile').style('display') == 'block')
-    {
-        $('svg').each(function()
-        {
-            this.pauseAnimations();
-        });
-    }
-    else
-    {
-        $('svg').each(function()
-        {
-            this.unpauseAnimations();
-        });
-    }
 }
 
 $(document).ready(function()
 {
-    $('.path, .cloud').style({display: 'block'});
     resize();
-    
+        
     $(window).on('resize load', function()
     {
         resize();
