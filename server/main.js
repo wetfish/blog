@@ -81,3 +81,8 @@ server.helper =
 
 // Add some routes
 require('./routes/pages')(server);
+
+server.app.use(function(req, res)
+{
+    res.redirect('https://wiki.wetfish.net' + req.url);
+});
