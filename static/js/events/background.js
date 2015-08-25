@@ -1,21 +1,17 @@
-function resize()
+function clouds()
 {
+    $('.path, .cloud').style({display: 'block'});
+
     // Pause cloud animations on mobile
     if($('.is-mobile').style('display') == 'block')
     {
-        $('.path, .cloud').style({display: 'none'});
-
         $('svg').each(function()
         {
             this.pauseAnimations();
         });
-
-        return;
     }
     else
     {
-        $('.path, .cloud').style({display: 'block'});
-
         $('svg').each(function()
         {
             this.unpauseAnimations();
@@ -31,7 +27,7 @@ function resize()
     };
 
     atmosphere.width = atmosphere.size.width * (parseInt(atmosphere.background[0]) / 100);
-    atmosphere.height = atmosphere.size.height * (parseInt(atmosphere.background[1]) / 100) - 5;
+    atmosphere.height = atmosphere.size.height * (parseInt(atmosphere.background[1]) / 100);
     
     $('.path, .cloud').style({height: atmosphere.height + 'px', width: atmosphere.width + 'px'});
 
@@ -55,7 +51,7 @@ function resize()
             $(this).data('height', cloud.height);
         }
 
-        var difference = Math.min(0.75, ($('body').height() / $(window).height()) / 4);
+        var difference = Math.min(0.75, ($('.atmosphere').height() / $(window).height()) / 4);
 
         $(this).attr('width', cloud.width * difference);
         $(this).attr('height', cloud.height * difference);
@@ -64,10 +60,24 @@ function resize()
 
 $(document).ready(function()
 {
-    resize();
-        
     $(window).on('resize load', function()
     {
-        resize();
+        var mobileHeight = $('section.header').height('outer') + $('section.content').height('outer');
+        var desktopHeight = $('body').height('outer');
+        var height = Math.max(mobileHeight, desktopHeight);
+
+console.log(mobileHeight, desktopHeight);
+        
+        $('.stars, .atmosphere, .clouds').style({'height': height + 'px'});
+
+        clouds();
     });
+    
+    $('section.body').on('scroll touchmove', function(event)
+    {
+        var scroll = $('section.body').scroll();
+        $('.background').el[0].scrollTop = scroll.top;
+    });
+
+    clouds();
 });

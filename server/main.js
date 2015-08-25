@@ -68,8 +68,8 @@ server.helper =
                 width: clouds[i].width,
                 top: Math.floor(server.helper.random(0, 500)),
                 left: 0,
-                duration: server.helper.random(50, 500),
-                begin: server.helper.random(-500, -50)
+                duration: server.helper.random(100, 700),
+                begin: server.helper.random(-700, -100)
             };
             
             output.push(cloud);
