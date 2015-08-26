@@ -1,3 +1,12 @@
+function resize()
+{
+    var mobileHeight = $('section.header').height('outer') + $('section.content').height('outer');
+    var desktopHeight = $('body').height('outer');
+    var height = Math.max(mobileHeight, desktopHeight);
+
+    $('.stars, .atmosphere, .clouds').style({'height': height + 'px'});
+}
+
 function clouds()
 {
     $('.path, .cloud').style({display: 'block'});
@@ -62,14 +71,7 @@ $(document).ready(function()
 {
     $(window).on('resize load', function()
     {
-        var mobileHeight = $('section.header').height('outer') + $('section.content').height('outer');
-        var desktopHeight = $('body').height('outer');
-        var height = Math.max(mobileHeight, desktopHeight);
-
-console.log(mobileHeight, desktopHeight);
-        
-        $('.stars, .atmosphere, .clouds').style({'height': height + 'px'});
-
+        resize();
         clouds();
     });
     
@@ -79,5 +81,6 @@ console.log(mobileHeight, desktopHeight);
         $('.background').el[0].scrollTop = scroll.top;
     });
 
+    resize();
     clouds();
 });

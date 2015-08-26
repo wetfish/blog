@@ -66,7 +66,7 @@ server.helper =
                 name: clouds[i].name,
                 height: clouds[i].height,
                 width: clouds[i].width,
-                top: Math.floor(server.helper.random(0, 500)),
+                top: Math.floor(server.helper.random(-50, 400)),
                 left: 0,
                 duration: server.helper.random(100, 700),
                 begin: server.helper.random(-700, -100)
