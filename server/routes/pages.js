@@ -30,7 +30,8 @@ module.exports = function(server)
                 news: 'partials/news',
             },
             stars: helper.generateStars(40),
-            clouds: helper.generateClouds()
+            clouds: helper.generateClouds(),
+            meta: "Wetfish is a Free Culture community founded in 2005 that advocates personal privacy and organizational transparency."
         };
         
         event.emit('render', req, res, options);

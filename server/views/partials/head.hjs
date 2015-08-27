@@ -7,6 +7,10 @@
 
         <title>Wetfish - The best internet on the internet</title>
 
+        {{#meta}}
+            <meta name="description" content="{{meta}}">
+        {{/meta}}
+
         <!-- Custom styles -->
         <link rel="stylesheet" href="/css/bundle.css" type="text/css">
 
