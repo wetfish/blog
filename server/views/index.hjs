@@ -11,17 +11,7 @@
                 {{> news}}
             </section>
 
-            <div class="construction">
-                <img src="/img/under-construction-truck.gif">
-            </div>
-
-            <div class='clear'></div>
-
-            <p class="small">
-                <a href="https://login.wetfish.net/" class="right secret">Login?</a>
-                &copy; Wetfish Enterprises 2005 - 2015<br>
-                This site is <a href='https://raw.githubusercontent.com/wetfish/corporate/master/LICENSE'>AGPL Licensed</a>. Source available via <a href='https://github.com/wetfish/corporate'>GitHub</a>
-            </p>
+            {{> footer}}
         </section>
     </section>
 {{> foot}}

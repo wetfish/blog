@@ -21,6 +21,7 @@ module.exports = function(server)
         var options =
         {
             view: 'index',
+            year: new Date().getFullYear(),
             news: news,
             next: next,
             page: 1,
@@ -28,6 +29,7 @@ module.exports = function(server)
             {
                 sidebar: 'partials/sidebar',
                 news: 'partials/news',
+                footer: 'partials/footer',
             },
             stars: helper.generateStars(40),
             clouds: helper.generateClouds(),
@@ -56,6 +58,7 @@ module.exports = function(server)
         event.emit('render', req, res,
         {
             view: 'index',
+            year: new Date().getFullYear(),
             news: news,
             next: next,
             prev: prev,
@@ -63,7 +66,8 @@ module.exports = function(server)
             partials:
             {
                 sidebar: 'partials/sidebar',
-                news: 'partials/news'
+                news: 'partials/news',
+                footer: 'partials/footer',
             },
             stars: helper.generateStars(40),
             clouds: helper.generateClouds()
