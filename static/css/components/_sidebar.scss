@@ -2,10 +2,11 @@
     box-sizing: border-box;
     position: fixed;
     background-color:rgba(0, 0, 0, 0.75);
-    padding: 1em 1em 0 0;
+    padding: 1em 3em 0 0;
     transition: opacity 0.4s;
     width: 100%;
     opacity: 0;
+    text-align:right;
     z-index: -1;
 
     &.open {
@@ -20,13 +21,13 @@
     }
     
     @media (min-width: 800px) {
+        padding: 1em 1em 0 0;
         background-color:rgba(0, 0, 0, 0.5);
         opacity: 1;
         position: static;
         z-index: 10;
         margin-top: 0;
         border-right: 1px solid #fff;
-        text-align:right;
         width: 250px;
         display: block;
 
