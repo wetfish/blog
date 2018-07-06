@@ -33,7 +33,28 @@
     {
         for(var i = 0, l = array.length; i < l; i++)
         {
-            callback.call(this, i, array[i]);
+            callback.call(this, array[i], i);
+        }
+    }
+
+    // Helper function to return either a single element or an array based on the length of the input given
+    // Output should be an array
+    // Fallback is the default value returned if there is no output
+    public.prototype.returnAllOrOne = function(output, fallback)
+    {
+        if(output.length)
+        {
+            if(output.length == 1)
+            {
+                return output[0];
+            }
+
+            return output;
+        }
+
+        if(fallback !== undefined)
+        {
+            return fallback;
         }
     }
 
@@ -141,10 +162,15 @@
     // Check how basic should be exported
 
     // Detect if we're in node or a browser
-    if(typeof module !== 'undefined' && module.exports)
+    if(typeof module === 'object' && module.exports)
     {
-        // We're in node or a CommonJS compatable environment
+        // We're in Node or a CommonJS compatable environment
         module.exports = public;
+    }
+    else if(typeof define === 'function' && define.amd)
+    {
+        // We're in a browser being loaded with AMD (Require.js)
+        define(function() { return public });
     }
     else
     {
@@ -157,21 +183,27 @@
     // addClass() - add a class to all matched nodes
     // usage - $('.selector').addClass('example');
 
-    public.prototype.addClass = function(className)
+    public.prototype.addClass = function(classNames)
     {
-        this.forEach(this.elements, function(index, element)
+        classNames = classNames.split(' ');
+
+        this.forEach(this.elements, function(element)
         {
             var classes = element.className.split(' ');
-            var index = classes.indexOf(className);
 
-            // Only add a class if it doesn't exist
-            if(index == -1)
+            classNames.forEach(function(className)
             {
-                classes.push(className);
-                element.className = classes.join(' ');
-            }
+                var index = classes.indexOf(className);
+
+                // Only add a class if it doesn't exist
+                if(index == -1)
+                {
+                    classes.push(className);
+                    element.className = classes.join(' ');
+                }
+            });
         });
-                
+
         return this;
     }
 
@@ -182,7 +214,7 @@
     public.prototype.append = function(content)
     {
         // Loop through current elements
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             if(typeof content == "string")
             {
@@ -207,7 +239,7 @@
         var output = [];
         
         // Loop through current elements
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             // If no value is specified, return the current value of the attribute
             if(value === undefined)
@@ -234,19 +266,7 @@
             }
         });
 
-        if(output.length)
-        {
-            // If only one element was matched, return that value
-            if(output.length == 1)
-            {
-                return output[0];
-            }
-
-            // Otherwise return an array of matched values
-            return output;
-        }
-
-        return this;
+        return this.returnAllOrOne(output, this);
     }
 
     ////////////////////////////////
@@ -262,20 +282,12 @@
         
         var output = [];
 
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             output.push(element.cloneNode(deep));
         });
 
-        // If we only one element was cloned
-        if(output.length == 1)
-        {
-            // Return only that element
-            return output[0];
-        }
-
-        // Otherwise, return an array of clones
-        return output;
+        return this.returnAllOrOne(output);
     }
 
     ////////////////////////////////
@@ -288,7 +300,7 @@
         var output = [];
         
         // Loop through current elements
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             // Make sure the dataset is an object (for old versions of IE)
             if(element.dataset === undefined)
@@ -319,29 +331,17 @@
             }
         });
 
-        if(output.length)
-        {
-            // If only one element was matched, return that value
-            if(output.length == 1)
-            {
-                return output[0];
-            }
-
-            // Otherwise return an array of matched values
-            return output;
-        }
-
-        return false;
+        return this.returnAllOrOne(output, false);
     }
 
     ////////////////////////////////
     // each(callback) - loop over the list of currently matched elements, calling the callback for each
-    // usage - $('a').each(function(index, element) { console.log(this) };
+    // usage - $('a').each(function(element, index) { console.log(this) };
 
     public.prototype.each = function(callback)
     {
         // Loop through current elements
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element, index)
         {
             callback.call(element, index, element);
         });
@@ -358,12 +358,12 @@
         // If an existing element was found
         if(typeof this.elements[index] != "undefined")
         {
-            this.elements = [this.elements[index]];
+            this.elements = this.el = [this.elements[index]];
             return this;
         }
 
         // Otherwise unset all matched elements
-        this.elements = [];
+        this.elements = this.el = [];
         return this;
     }
 
@@ -378,14 +378,14 @@
         this.elements = [];
 
         // Loop through the original elements
-        this.forEach(elements, function(index, element)
+        this.forEach(elements, function(element)
         {
             var children = element.querySelectorAll(selector);
 
             // Loop through any matching children and push them to the list of elements
-            this.forEach(children, function(childIndex, childElement)
+            this.forEach(children, function(child)
             {
-                this.elements.push(childElement);
+                this.elements.push(child);
             });
         });
 
@@ -404,12 +404,12 @@
         var match = false;
 
         // TODO: Break loop when match is found?
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             // Reset matches between each loop
             var matches = {};
 
-            this.forEach(classes, function(index, className)
+            this.forEach(classes, function(className)
             {
                 var classNames = element.className.split(' ');
                 var index = classNames.indexOf(className);
@@ -457,20 +457,12 @@
         
         var output = [];
 
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             output.push(private.height(element, mode));
         });
 
-        // If we were only checking the height of one element
-        if(output.length == 1)
-        {
-            // Return only that element's height
-            return output[0];
-        }
-
-        // Otherwise, return an array of heights
-        return output;
+        return this.returnAllOrOne(output);
     }
 
     ////////////////////////////////
@@ -480,7 +472,7 @@
     public.prototype.html = function(content)
     {
         // Loop through current elements
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             if(typeof content == "string")
             {
@@ -503,9 +495,9 @@
     {
         var output = [];
 
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
-            this.forEach(element.parentNode.children, function(index, child)
+            this.forEach(element.parentNode.children, function(child, index)
             {
                 if(element == child)
                 {
@@ -514,15 +506,7 @@
             });
         });
 
-        // If we only one element was matched
-        if(output.length == 1)
-        {
-            // Return only that element's index
-            return output[0];
-        }
-
-        // Otherwise, return an array of indexes
-        return output;
+        return this.returnAllOrOne(output);
     }
 
     ////////////////////////////////
@@ -553,9 +537,9 @@
         // If the function is found
         if(functionIndex > -1)
         {
-            this.forEach(events, function(index, event)
+            this.forEach(events, function(event)
             {
-                this.forEach(this.elements, function(index, element)
+                this.forEach(this.elements, function(element)
                 {
                     element.removeEventListener(event, private.eventFunctions[functionIndex]);
                 });
@@ -583,9 +567,9 @@
         
         events = events.split(' ');
 
-        this.forEach(events, function(index, event)
+        this.forEach(events, function(event)
         {
-            this.forEach(this.elements, function(index, element)
+            this.forEach(this.elements, function(element)
             {
                 element.removeEventListener(event, callback);
             });
@@ -626,9 +610,9 @@
         // Subtract 1 because push returns the array length
         functionIndex--;
 
-        this.forEach(events, function(index, event)
+        this.forEach(events, function(event)
         {
-            this.forEach(this.elements, function(index, element)
+            this.forEach(this.elements, function(element)
             {
                 element.addEventListener(event, private.eventFunctions[functionIndex]);
             });
@@ -651,14 +635,74 @@
         
         events = events.split(' ');
 
-        this.forEach(events, function(index, event)
+        this.forEach(events, function(event)
         {
-            this.forEach(this.elements, function(index, element)
+            this.forEach(this.elements, function(element)
             {
                 element.addEventListener(event, callback);
             });
         });
 
+        return this;
+    }
+
+    ////////////////////////////////
+    // parent() - get the direct parent of all matched elements
+    // usage - $('.selector').parent();
+
+    public.prototype.parent = function()
+    {
+        var elements = [];
+
+        this.forEach(this.elements, function(element, index)
+        {
+            elements[index] = element.parentNode;
+        });
+
+        this.elements = this.el = elements;
+        return this;
+    }
+
+    ////////////////////////////////
+    // parents() - loop through all parents until a matching selector is found
+    // usage - $('.selector').parents('.container');
+
+    private.parent = function(element, parent)
+    {
+        if(!element)
+        {
+            return false;
+        }
+
+        if(element.parentNode == parent)
+        {
+            return parent;
+        }
+        else
+        {
+            return private.parent(element.parentNode, parent);
+        }
+    }
+
+    public.prototype.parents = function(selector)
+    {
+        var elements = [];
+        var parents = document.querySelectorAll(selector);
+
+        this.forEach(this.elements, function(element)
+        {
+            this.forEach(parents, function(parent)
+            {
+                var matched = private.parent(element, parent);
+
+                if(matched)
+                {
+                    elements.push(parent);
+                }
+            });
+        });
+
+        this.elements = this.el = elements;
         return this;
     }
 
@@ -673,7 +717,7 @@
         var output = [];
         relative = relative || 'page';
 
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             var rect = element.getBoundingClientRect();
 
@@ -696,15 +740,7 @@
             output.push(position);
         });
 
-        // If we were only checking the position of one element
-        if(output.length == 1)
-        {
-            // Return only that element's position
-            return output[0];
-        }
-
-        // Otherwise, return an array of positions
-        return output;
+        return this.returnAllOrOne(output);
     }
 
     ////////////////////////////////
@@ -714,7 +750,7 @@
     public.prototype.prepend = function(content)
     {
         // Loop through current elements
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             if(typeof content == "string")
             {
@@ -739,7 +775,7 @@
         var output = [];
         
         // Loop through current elements
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             // If no value is specified, return the current property of the element
             if(value === undefined)
@@ -753,19 +789,7 @@
             }
         });
 
-        if(output.length)
-        {
-            // If only one element was matched, return that value
-            if(output.length == 1)
-            {
-                return output[0];
-            }
-
-            // Otherwise return an array of matched values
-            return output;
-        }
-
-        return this;
+        return this.returnAllOrOne(output, this);
     }
 
     // Depends on: ./deps/customEvent.js
@@ -776,7 +800,7 @@
 
     public.prototype.ready = function(callback)
     {
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             element.addEventListener('ready', callback);
         });
@@ -799,7 +823,7 @@
     public.prototype.remove = function()
     {
         // Loop through current elements
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             element.parentNode.removeChild(element);
         });
@@ -811,19 +835,25 @@
     // removeClass() - remove a class from all matched nodes
     // usage - $('.selector').removeClass('example');
 
-    public.prototype.removeClass = function(className)
+    public.prototype.removeClass = function(classNames)
     {
-        this.forEach(this.elements, function(index, element)
+        classNames = classNames.split(' ');
+
+        this.forEach(this.elements, function(element)
         {
             var classes = element.className.split(' ');
-            var index = classes.indexOf(className);
 
-            // Only remove a class if it exists
-            if(index != -1)
+            classNames.forEach(function(className)
             {
-                classes.splice(index, 1);
-                element.className = classes.join(' ');
-            }
+                var index = classes.indexOf(className);
+
+                // Only remove a class if it exists
+                if(index != -1)
+                {
+                    classes.splice(index, 1);
+                    element.className = classes.join(' ');
+                }
+            });
         });
 
         return this;
@@ -836,7 +866,7 @@
     public.prototype.replace = function(content)
     {
         // Loop through current elements
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             if(typeof content == "string")
             {
@@ -860,7 +890,7 @@
     {
         var output = [];
 
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             // The window is a special case that doesn't have scrollTop / scrollLeft properties
             if(element == window)
@@ -883,15 +913,7 @@
             output.push(scroll);
         });
 
-        // If we were only checking the position of one element
-        if(output.length == 1)
-        {
-            // Return only that element's position
-            return output[0];
-        }
-
-        // Otherwise, return an array of positions
-        return output;
+        return this.returnAllOrOne(output);
     }
 
     // Depends on: ./deps/width.js, ./deps/height.js
@@ -909,7 +931,7 @@
         
         var output = [];
 
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             var size =
             {
@@ -920,15 +942,7 @@
             output.push(size);
         });
 
-        // If we were only checking the size of one element
-        if(output.length == 1)
-        {
-            // Return only that element's size
-            return output[0];
-        }
-
-        // Otherwise, return an array of sizes
-        return output;
+        return this.returnAllOrOne(output);
     }
 
     ////////////////////////////////
@@ -942,11 +956,11 @@
         // If we're setting an object of styles
         if(typeof style == "object")
         {
-            var keys = Object.keys(style);
+            var properties = Object.keys(style);
 
-            this.forEach(keys, function(key, property)
+            this.forEach(properties, function(property)
             {
-                this.forEach(this.elements, function(index, element)
+                this.forEach(this.elements, function(element)
                 {
                     element.style[property] = style[property];
                 });
@@ -960,21 +974,13 @@
         {
             var output = [];
 
-            this.forEach(this.elements, function(index, element)
+            this.forEach(this.elements, function(element)
             {
                 var current = window.getComputedStyle(element);
                 output.push(current[style]);
             });
 
-            // If we were only checking the style of one element
-            if(output.length == 1)
-            {
-                // Return only that element's style
-                return output[0];
-            }
-
-            // Otherwise, return an array of styles
-            return output;
+            return this.returnAllOrOne(output);
         }
     }
 
@@ -986,9 +992,65 @@
     public.prototype.text = function(content)
     {
         // Loop through current elements
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             element.innerHTML = content.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        });
+
+        return this;
+    }
+
+    ////////////////////////////////
+    // toggle() - will either show or hide an element every time the function is called, or switch between classes
+    // usage - $('.selector').toggle(); // If the element is visible, it will be hidden. If the element is hidden, it will become visible
+    // usage - $('.selector').toggle('class'); // If the element has the class, it will be removed, otherwise it will be added
+
+    public.prototype.toggle = function(classNames)
+    {
+        if(classNames)
+        {
+            classNames = classNames.split(' ');
+        }
+
+        this.forEach(this.elements, function(element)
+        {
+            // If a class is being toggled
+            if(classNames)
+            {
+                var classes = element.className.split(' ');
+
+                classNames.forEach(function(className)
+                {
+                    var index = classes.indexOf(className);
+
+                    // Add the class if it doesn't exist
+                    if(index == -1)
+                    {
+                        classes.push(className);
+                    }
+
+                    // Or remove it if it does
+                    else
+                    {
+                        classes.splice(index, 1);
+                    }
+                });
+
+                element.className = classes.join(' ');
+            }
+
+            // Otherwise, just check if the element is currently being displayed
+            else
+            {
+                if($(element).style('display') == 'none')
+                {
+                    $(element).style({'display': 'block'});
+                }
+                else
+                {
+                    $(element).style({'display': 'none'});
+                }
+            }
         });
 
         return this;
@@ -1069,7 +1131,7 @@
     {
         var options = arguments;
         
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             // Add the new transform data
             private.transform.save(element, options);
@@ -1118,7 +1180,7 @@
         var event = new private.CustomEvent(event, params);
 
         // Loop through matched elements
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             // Dispatch it!
             element.dispatchEvent(event);
@@ -1135,7 +1197,7 @@
         var output = [];
         
         // Loop through current elements
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             // If no value is specified, return the current value of the input
             if(value === undefined)
@@ -1149,19 +1211,7 @@
             }
         });
 
-        if(output.length)
-        {
-            // If only one element was matched, return that value
-            if(output.length == 1)
-            {
-                return output[0];
-            }
-
-            // Otherwise return an array of matched values
-            return output;
-        }
-
-        return this;
+        return this.returnAllOrOne(output, this);
     }
 
     // Depends on: ./deps/width.js
@@ -1179,19 +1229,11 @@
 
         var output = [];
 
-        this.forEach(this.elements, function(index, element)
+        this.forEach(this.elements, function(element)
         {
             output.push(private.width(element, mode));
         });
 
-        // If we were only checking the width of one element
-        if(output.length == 1)
-        {
-            // Return only that element's width
-            return output[0];
-        }
-
-        // Otherwise, return an array of widths
-        return output;
+        return this.returnAllOrOne(output);
     }
 })();
