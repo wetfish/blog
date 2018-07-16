@@ -39,6 +39,50 @@ module.exports = function(server)
         event.emit('render', req, res, options);
     });
 
+    //match requested url with the news data url
+    function findPost(url){
+       var formatted = url.replace('/post/','');
+        
+        for (var i = 0; i < config.news.length; i++) {
+           
+            if (formatted==config.news[i]['url']) {
+                console.log('found it!!!');
+                return config.news[i];
+            }
+            
+
+        }
+    }
+
+    
+
+
+    
+    //display the current post when title is clicked
+    app.get('/post/:url',function(req, res){
+       var post= req.url;
+       const page = parseFloat(req.params.index);
+       news=findPost(post);
+
+       event.emit('render', req, res,
+       {
+            view: 'posts',
+            year: new Date().getFullYear(),
+            news: news,
+          
+            partials:{
+                sidebar:'partials/sidebar',
+                news: 'partials/news',
+                 footer: 'partials/footer'
+            },
+            stars: helper.generateStars(40),
+            clouds: helper.generateClouds()
+       }
+
+        );
+      
+    });
+
     // Display the home, except paginated
     app.get('/page/:index', function(req, res)
     {
@@ -49,6 +93,7 @@ module.exports = function(server)
         var news = config.news.slice(index * 2, index * 2 + 2);
         var prev = Math.round(page - 1);
         var next = 0;
+        
 
         if(config.news.length > index * 2 + 2)
         {
