@@ -40,12 +40,15 @@ module.exports = function(server)
     });
 
     //match requested url with the news data url
-    function findPost(url){
+    function findPost(url)
+    {
        var formatted = url.replace('/post/','');
         
-        for (var i = 0; i < config.news.length; i++) {
+        for (var i = 0; i < config.news.length; i++) 
+        {
            
-            if (formatted==config.news[i]['url']) {
+            if (formatted==config.news[i]['url']) 
+            {
                 console.log('found it!!!');
                 return config.news[i];
             }
