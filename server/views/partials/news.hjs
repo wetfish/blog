@@ -1,6 +1,10 @@
 {{#news}}
     <article>
+<<<<<<< HEAD
         <h1 class="title"><a  href="/post/{{url}}">{{title}}</a></h1>
+=======
+        <h1 class="title">{{title}}</h1>
+>>>>>>> parent of 770ed33... manually migrated code to my personal fork.
 
         <div class="byline">
             Posted by <strong class="author">{{author}}</strong> on {{date}}

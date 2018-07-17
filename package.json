@@ -4,16 +4,15 @@
   "author": "Rachel <rachel@wetfish.net>",
   "description": "The Official Site for Wetfish Enterprises",
   "dependencies": {
-    "gulp-cli": "^2.0.1",
     "wetfish-basic": "^0.7.6",
-    "wetfish-server": "^0.2.0"
+    "wetfish-server": "^0.1.1"
   },
   "devDependencies": {
-    "browserify": "^16.2.2",
-    "gulp": "^4.0.0",
+    "browserify": "^10.2.6",
+    "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-util": "^3.0.6",
-    "node-sass": "^4.9.2",
+    "node-sass": "^3.2.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.2.3"

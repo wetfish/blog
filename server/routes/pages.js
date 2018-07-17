@@ -39,6 +39,7 @@ module.exports = function(server)
         event.emit('render', req, res, options);
     });
 
+<<<<<<< HEAD
     //match requested url with the news data url
     function findPost(url)
     {
@@ -86,6 +87,8 @@ module.exports = function(server)
       
     });
 
+=======
+>>>>>>> parent of 770ed33... manually migrated code to my personal fork.
     // Display the home, except paginated
     app.get('/page/:index', function(req, res)
     {
@@ -96,7 +99,6 @@ module.exports = function(server)
         var news = config.news.slice(index * 2, index * 2 + 2);
         var prev = Math.round(page - 1);
         var next = 0;
-        
 
         if(config.news.length > index * 2 + 2)
         {

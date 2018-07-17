@@ -25,6 +25,11 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
+<<<<<<< HEAD
 prepros-6.config
 #config.js
+=======
+
+config.js
+>>>>>>> parent of 770ed33... manually migrated code to my personal fork.
 uploads
