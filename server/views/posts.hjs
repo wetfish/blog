@@ -1,0 +1,16 @@
+{{> head}}
+    {{> header}}
+    <section class="body">
+        <h2><a href="/">Home</a></h2>
+      <section style="width:100%;" class="content">
+            <a href="https://login.wetfish.net/" class="right secret" style="line-height: 280%; margin-top: 0.67em">Login?</a>
+
+            <section style="margin-top:5em;" class="news">
+                {{> news}}
+            </section>
+
+            {{> footer}}
+        </section>
+</section>
+
+{{> foot}}
