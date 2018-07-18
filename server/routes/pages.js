@@ -32,63 +32,76 @@ module.exports = function(server)
                 footer: 'partials/footer',
             },
             stars: helper.generateStars(40),
-            clouds: helper.generateClouds(),
+            clouds: helper.generateClouds(1),
             meta: "Wetfish is a Free Culture community founded in 2005 that advocates personal privacy and organizational transparency."
         };
         
         event.emit('render', req, res, options);
     });
 
-<<<<<<< HEAD
+
     //match requested url with the news data url
     function findPost(url)
     {
-       var formatted = url.replace('/post/','');
-        
-        for (var i = 0; i < config.news.length; i++) 
+       //const formatted = url.replace('/post/','');
+        /*config.news.forEach(function(i,index, array)
         {
            
-            if (formatted==config.news[i]['url']) 
+            if (formatted==i['url']) 
             {
+                //console.log(i);
                 console.log('found it!!!');
-                return config.news[i];
+                console.log(array);
+                return array;
             }
+             
+        });
+       */
+       for (var i = 0; i < config.news.length; i++) 
+        {
+           if (url==config.news[i]['url']) 
+            {
+              
+              console.log('found it!!!');
+              
+              return config.news[i];
+            }
+            
             
 
         }
+        
     }
 
     
 
-
     
     //display the current post when title is clicked
-    app.get('/post/:url',function(req, res){
-       var post= req.url;
-       const page = parseFloat(req.params.index);
+    app.get('/post/:url',function(req, res)
+    {
+       var post= req.params.url;
        news=findPost(post);
-
+       
        event.emit('render', req, res,
        {
             view: 'posts',
             year: new Date().getFullYear(),
             news: news,
           
-            partials:{
+            partials:
+            {
                 sidebar:'partials/sidebar',
                 news: 'partials/news',
-                 footer: 'partials/footer'
+                footer: 'partials/footer'
             },
+
             stars: helper.generateStars(40),
             clouds: helper.generateClouds()
-       }
-
-        );
+        });
       
     });
 
-=======
->>>>>>> parent of 770ed33... manually migrated code to my personal fork.
+
     // Display the home, except paginated
     app.get('/page/:index', function(req, res)
     {
