@@ -27,7 +27,7 @@ build/Release
 node_modules
 
 prepros-6.config
-#config.js
+config.js
 
 
 

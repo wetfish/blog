@@ -32,7 +32,7 @@ module.exports = function(server)
                 footer: 'partials/footer',
             },
             stars: helper.generateStars(40),
-            clouds: helper.generateClouds(1),
+            clouds: helper.generateClouds(),
             meta: "Wetfish is a Free Culture community founded in 2005 that advocates personal privacy and organizational transparency."
         };
         
@@ -40,43 +40,23 @@ module.exports = function(server)
     });
 
 
-    //match requested url with the news data url
+    // Match requested url with the news data url
     function findPost(url)
     {
-       //const formatted = url.replace('/post/','');
-        /*config.news.forEach(function(i,index, array)
+        for (var i = 0; i < config.news.length; i++) 
         {
-           
-            if (formatted==i['url']) 
+            if (url==config.news[i]['url']) 
             {
-                //console.log(i);
-                console.log('found it!!!');
-                console.log(array);
-                return array;
-            }
-             
-        });
-       */
-       for (var i = 0; i < config.news.length; i++) 
-        {
-           if (url==config.news[i]['url']) 
-            {
-              
               console.log('found it!!!');
-              
               return config.news[i];
             }
-            
-            
-
         }
-        
     }
 
     
 
     
-    //display the current post when title is clicked
+    // Display the current post when title is clicked
     app.get('/post/:url',function(req, res)
     {
        var post= req.params.url;
