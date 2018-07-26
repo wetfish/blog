@@ -45,7 +45,7 @@ module.exports = function(server)
     {
         for (var i = 0; i < config.news.length; i++) 
         {
-            if (url==config.news[i]['url']) 
+            if (url==config.news[i].url) 
             {
               console.log('found it!!!');
               return config.news[i];
@@ -59,9 +59,10 @@ module.exports = function(server)
     // Display the current post when title is clicked
     app.get('/post/:url',function(req, res)
     {
+       
        var post= req.params.url;
        news=findPost(post);
-       
+
        event.emit('render', req, res,
        {
             view: 'posts',
@@ -70,15 +71,13 @@ module.exports = function(server)
           
             partials:
             {
-                sidebar:'partials/sidebar',
+                sidebar:'partials/postSidebar',
                 news: 'partials/news',
                 footer: 'partials/footer'
             },
-
             stars: helper.generateStars(40),
             clouds: helper.generateClouds()
         });
-      
     });
 
 
@@ -140,4 +139,4 @@ module.exports = function(server)
             }
         });
     });
-}
+};
