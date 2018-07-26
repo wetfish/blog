@@ -68,10 +68,10 @@ module.exports = function(server)
             view: 'posts',
             year: new Date().getFullYear(),
             news: news,
-          
+            homeLink:true,
             partials:
             {
-                sidebar:'partials/postSidebar',
+                sidebar:'partials/sidebar',
                 news: 'partials/news',
                 footer: 'partials/footer'
             },
