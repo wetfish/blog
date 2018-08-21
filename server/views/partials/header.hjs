@@ -1,6 +1,6 @@
 <section class="header">
     <img class="hamburger right" src="/img/hamburger.svg">
-
+    <i class="fa fa-bars fa-4x hamburger right"></i>
     <a class='title' href='https://wetfish.net/'><h1>wetfish.net</h1></a>
     <div class='yellow'>The best internet on the internet</div>
 </section>

@@ -1,7 +1,8 @@
 {{#news}}
     <article>
-        <h1 class="title">{{title}}</h1>
 
+        <h1 class="title"><a class="title" href="/post/{{url}}">{{title}}</a></h1>
+      
         <div class="byline">
             Posted by <strong class="author">{{author}}</strong> on {{date}}
         </div>

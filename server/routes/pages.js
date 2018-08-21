@@ -39,6 +39,48 @@ module.exports = function(server)
         event.emit('render', req, res, options);
     });
 
+
+    // Match requested url with the news data url
+    function findPost(url)
+    {
+        for (var i = 0; i < config.news.length; i++) 
+        {
+            if (url==config.news[i].url) 
+            {
+              console.log('found it!!!');
+              return config.news[i];
+            }
+        }
+    }
+
+    
+
+    
+    // Display the current post when title is clicked
+    app.get('/post/:url',function(req, res)
+    {
+       
+       var post= req.params.url;
+       news=findPost(post);
+
+       event.emit('render', req, res,
+       {
+            view: 'posts',
+            year: new Date().getFullYear(),
+            news: news,
+            homeLink:true,
+            partials:
+            {
+                sidebar:'partials/sidebar',
+                news: 'partials/news',
+                footer: 'partials/footer'
+            },
+            stars: helper.generateStars(40),
+            clouds: helper.generateClouds()
+        });
+    });
+
+
     // Display the home, except paginated
     app.get('/page/:index', function(req, res)
     {
@@ -97,4 +139,4 @@ module.exports = function(server)
             }
         });
     });
-}
+};
