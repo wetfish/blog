@@ -13,7 +13,6 @@
 
         <!-- Custom styles -->
         <link rel="stylesheet" href="/css/bundle.css" type="text/css">
-
         <!-- Custom scripts -->
         <script src="/js/deps.js"></script>
         <script src="/js/bundle.js"></script>
