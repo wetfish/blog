@@ -1,12 +1,11 @@
 {{#news}}
     <article>
-
         <h1 class="title"><a class="title" href="/post/{{url}}">{{title}}</a></h1>
-      
+
         <div class="byline">
             Posted by <strong class="author">{{author}}</strong> on {{date}}
         </div>
-        
+
         <div class="content">
             {{#content}}
                 <p>{{{.}}}</p>
@@ -16,7 +15,7 @@
         {{#tags.length}}
             <div class="tags">
                 Tagged:
-                
+
                 <ul>
                     {{#tags}}
                         <li>{{.}}</li>
