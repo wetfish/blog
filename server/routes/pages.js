@@ -17,7 +17,7 @@ module.exports = function(server)
         {
             next = 2;
         }
-        
+
         var options =
         {
             view: 'index',
@@ -35,8 +35,54 @@ module.exports = function(server)
             clouds: helper.generateClouds(),
             meta: "Wetfish is a Free Culture community founded in 2005 that advocates personal privacy and organizational transparency."
         };
-        
+
         event.emit('render', req, res, options);
+    });
+
+
+    // Match requested url with the news data url
+    function findPost(url)
+    {
+        let match = false;
+
+        config.news.forEach(function(post)
+        {
+            if(url == post.url)
+            {
+                match = post;
+            }
+        });
+
+        return match;
+    }
+
+    // Display the current post when title is clicked
+    app.get('/post/:url', function(req, res, next)
+    {
+       var post = findPost(req.params.url);
+
+       // Continue to 404 if no post matches
+       if(!post)
+       {
+           next();
+           return;
+       }
+
+       event.emit('render', req, res,
+       {
+            view: 'post',
+            year: new Date().getFullYear(),
+            news: post,
+            homeLink: true,
+            partials:
+            {
+                sidebar:'partials/sidebar',
+                news: 'partials/news',
+                footer: 'partials/footer'
+            },
+            stars: helper.generateStars(40),
+            clouds: helper.generateClouds()
+        });
     });
 
     // Display the home, except paginated
@@ -45,7 +91,7 @@ module.exports = function(server)
         // Floats are more fun than ints ^_~
         var page = parseFloat(req.params.index);
         var index = page - 1;
-        
+
         var news = config.news.slice(index * 2, index * 2 + 2);
         var prev = Math.round(page - 1);
         var next = 0;
@@ -54,7 +100,7 @@ module.exports = function(server)
         {
             next = Math.floor(page + 1);
         }
-        
+
         event.emit('render', req, res,
         {
             view: 'index',
@@ -97,4 +143,4 @@ module.exports = function(server)
             }
         });
     });
-}
+};

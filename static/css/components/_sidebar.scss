@@ -19,7 +19,7 @@
     .text {
         display: none;
     }
-    
+
     @media (min-width: 800px) {
         padding: 1em 1em 0 0;
         background-color:rgba(0, 0, 0, 0.5);
@@ -42,11 +42,11 @@
 
     .links {
         margin-top: -1em;
-    
+
         @media (min-width: 800px) {
             margin-top:2em;
         }
-        
+
         a {
             margin-right:-1em;
             padding:1.1em;
