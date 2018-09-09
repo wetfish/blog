@@ -57,9 +57,16 @@ module.exports = function(server)
     }
 
     // Display the current post when title is clicked
-    app.get('/post/:url',function(req, res)
+    app.get('/post/:url', function(req, res, next)
     {
        var post = findPost(req.params.url);
+
+       // Continue to 404 if no post matches
+       if(!post)
+       {
+           next();
+           return;
+       }
 
        event.emit('render', req, res,
        {
