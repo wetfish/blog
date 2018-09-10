@@ -9,11 +9,11 @@ module.exports =
 
     // Path to views
     views: __dirname + '/views',
-    
+
     news:
     [
-        {   
-            url: 'An-example-news-post',
+        {
+            url: 'example-news-post',
             title: 'An example news post',
             author: 'rachel',
             date: 'April 30, 2015',
@@ -25,6 +25,6 @@ module.exports =
 
             tags: ['Cool', 'Example', 'Bro']
         }
-        
+
     ]
 }
