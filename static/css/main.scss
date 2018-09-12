@@ -1,8 +1,10 @@
 @import 'misc/helpers';
 @import 'misc/typography';
 @import 'misc/news';
-@import '../font-awesome/scss/font-awesome.scss';
 @import 'components/background';
 @import 'components/header';
 @import 'components/sidebar';
 @import 'components/content';
+@import '../../node_modules/font-awesome/scss/font-awesome';
+
+
