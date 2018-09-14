@@ -20,7 +20,6 @@ var bundle =
         [
             './static/js/deps/basic.js',    // Load wetfish basic first
             './static/js/deps/*.js',        // Load everything else
-
         ];
         
         gulp.src(dependencies)
@@ -77,5 +76,4 @@ gulp.task('default', ['deps', 'js', 'scss','copyfonts', 'watch']);
 gulp.task('deps', bundle.deps);
 gulp.task('js', bundle.js);
 gulp.task('scss', bundle.scss);
-
 gulp.task('watch', watch);
