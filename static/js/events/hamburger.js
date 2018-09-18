@@ -13,15 +13,31 @@ $(document).ready(function()
         }
     });
 
-    var time; // to keep track of setTimeouts.
+    var dtime; // to keep track of setTimeouts.
 
     $(document).on('mousemove',function()
     {   
-        clearTimeout(time);
+        clearTimeout(dtime);
             
         time=setTimeout(function()
         { 
-            //i.hamburger is the fa-bar icon     
+            //i.hamburger is the fa-bar icon  
+            $('i.hamburger').addClass('hide');
+            $('img.hamburger').removeClass('hide'); 
+        },30000);
+
+        $('img.hamburger').addClass('hide');
+        $('i.hamburger').removeClass('hide');
+    });
+
+    var mtime;
+    //for mobile users
+    document.addEventListener('touchstart', function onFirstTouch(){
+        
+        clearTimeout(mtime);
+        document.USER_IS_TOUCHING = true;
+
+        mtime=setTimeout(function(){
             $('i.hamburger').addClass('hide');
             $('img.hamburger').removeClass('hide'); 
         },30000);
