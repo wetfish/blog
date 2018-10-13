@@ -13,7 +13,7 @@ module.exports =
     news:
     [
         {
-            url: 'An-example-news-post',
+            url: 'example-news-post',
             title: 'An example news post',
             author: 'rachel',
             date: 'April 30, 2015',
