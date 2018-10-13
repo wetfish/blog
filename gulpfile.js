@@ -21,12 +21,12 @@ var bundle =
             './static/js/deps/basic.js',    // Load wetfish basic first
             './static/js/deps/*.js',        // Load everything else
         ];
-        
+
         gulp.src(dependencies)
         .pipe(concat('deps.js'))
         .pipe(gulp.dest('./static/js'));
     },
-    
+
     js: function()
     {
         bundler.bundle()
@@ -48,8 +48,8 @@ var bundle =
     }
 };
 
-gulp.task('copyfonts', function(){
-    gulp.src('./node_modules/font-awesome/fonts/**/*.{ttf,woff,eof,svg}')
+gulp.task('fonts', function(){
+    gulp.src('./node_modules/font-awesome/fonts/**/*.{ttf,woff,woff2,eof,svg}')
     .pipe(gulp.dest('./static/fonts'));
 });
 
@@ -70,7 +70,7 @@ bundler.on('update', bundle.js);
 bundler.on('log', gutil.log);
 
 // By default, do everything
-gulp.task('default', ['deps', 'js', 'scss','copyfonts', 'watch']);
+gulp.task('default', ['deps', 'js', 'scss','fonts', 'watch']);
 
 // Separate tasks for individual things
 gulp.task('deps', bundle.deps);
