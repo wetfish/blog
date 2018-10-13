@@ -277,6 +277,8 @@ section.content {
   padding: 1em;
   width: 100%;
   font-size: 15pt; }
+  section.content h1 {
+    font-size: 200%; }
   @media (min-width: 800px) {
     section.content {
       font-size: 11pt;
@@ -284,7 +286,9 @@ section.content {
       width: 500px;
       margin-top: 0;
       border-left: 1px solid #fff;
-      float: right; } }
+      float: right; }
+      section.content h1 {
+        font-size: 280%; } }
   @media (min-width: 1100px) {
     section.content {
       font-size: 10pt;
