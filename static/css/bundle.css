@@ -181,6 +181,8 @@ body {
     .header {
       display: none;
       width: 400px; } }
+  .header h1 {
+    display: inline-block; }
   .header i.hamburger {
     padding: 0;
     vertical-align: middle;
