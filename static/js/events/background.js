@@ -37,7 +37,7 @@ function clouds()
 
     atmosphere.width = atmosphere.size.width * (parseInt(atmosphere.background[0]) / 100);
     atmosphere.height = atmosphere.size.height * (parseInt(atmosphere.background[1]) / 100);
-    
+
     $('.path, .cloud').style({height: atmosphere.height + 'px', width: atmosphere.width + 'px'});
 
     // Scale clouds based on atmosphere size
@@ -48,7 +48,7 @@ function clouds()
             width: this.width.baseVal.value,
             height: this.height.baseVal.value
         };
-        
+
         if($(this).data('width') && $(this).data('height'))
         {
             cloud.width = $(this).data('width');
@@ -74,7 +74,7 @@ $(document).ready(function()
         resize();
         clouds();
     });
-    
+
     $('section.body').on('scroll touchmove', function(event)
     {
         var scroll = $('section.body').scroll();
