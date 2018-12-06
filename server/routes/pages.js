@@ -20,7 +20,6 @@ module.exports = function(server)
 
         var options =
         {
-            title: 'Wetfish - The best internet on the internet',
             view: 'index',
             year: new Date().getFullYear(),
             news: news,
@@ -105,7 +104,6 @@ module.exports = function(server)
 
         event.emit('render', req, res,
         {
-            title: 'Wetfish - The best internet on the internet',
             view: 'index',
             year: new Date().getFullYear(),
             news: news,
