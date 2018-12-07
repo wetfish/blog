@@ -104,6 +104,7 @@ module.exports = function(server)
 
         event.emit('render', req, res,
         {
+            title: 'Page '+page,
             view: 'index',
             year: new Date().getFullYear(),
             news: news,
