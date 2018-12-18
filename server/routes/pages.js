@@ -60,7 +60,7 @@ module.exports = function(server)
     app.get('/post/:url', function(req, res, next)
     {
        var post = findPost(req.params.url);
-
+       
        // Continue to 404 if no post matches
        if(!post)
        {
@@ -70,6 +70,7 @@ module.exports = function(server)
 
        event.emit('render', req, res,
        {
+            title: post.title,
             view: 'post',
             year: new Date().getFullYear(),
             news: post,
@@ -103,6 +104,7 @@ module.exports = function(server)
 
         event.emit('render', req, res,
         {
+            title: 'Page '+page,
             view: 'index',
             year: new Date().getFullYear(),
             news: news,
