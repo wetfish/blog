@@ -1,10 +1,15 @@
 a {
-    color:pink;
-    text-decoration:none;
+    color: pink;
+    text-decoration: none;
 
     &:hover {
-        text-decoration:underline;
+        text-decoration: underline;
     }
+}
+
+.hide {
+    visibility: hidden;
+    display: none;
 }
 
 .secret {
@@ -19,7 +24,7 @@ a {
 .right { float: right; }
 .left { float: left; }
 .clear { clear: both; }
-.yellow { color:yellow; }
+.yellow { color: yellow; }
 
 
 .is-mobile {

@@ -29,3 +29,4 @@ node_modules
 prepros-6.config
 config.js
 uploads
+static/fonts/fontawesome-webfont.*

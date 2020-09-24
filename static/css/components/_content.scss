@@ -20,7 +20,7 @@ section.body {
     @media (min-width: 1100px) {
         width: 1010px;
     }
-    
+
     margin: 0 auto;
 }
 
@@ -29,7 +29,11 @@ section.content {
     padding:1em;
     width: 100%;
     font-size: 15pt;
-    
+
+    h1 {
+      font-size: 200%;
+    }
+
     @media (min-width: 800px) {
         font-size: 11pt;
         background-color:rgba(0, 0, 0, 0.5);
@@ -37,6 +41,10 @@ section.content {
         margin-top: 0;
         border-left:1px solid #fff;
         float: right;
+
+        h1 {
+            font-size: 280%;
+        }
     }
 
     @media (min-width: 1100px) {

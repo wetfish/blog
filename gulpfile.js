@@ -51,6 +51,7 @@ var bundle =
     }
 };
 
+
 gulp.task('fonts', function(done){
     gulp.src('./node_modules/font-awesome/fonts/**/*.{ttf,woff,woff2,eof,svg}')
     .pipe(gulp.dest('./static/fonts'));
