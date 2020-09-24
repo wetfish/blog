@@ -4,17 +4,17 @@
   "author": "Rachel <rachel@wetfish.net>",
   "description": "The Official Site for Wetfish Enterprises",
   "dependencies": {
-    "wetfish-basic": "^0.7.6",
-    "wetfish-server": "^0.1.1"
+    "wetfish-basic": "^0.7.11",
+    "wetfish-server": "^0.2.0"
   },
   "devDependencies": {
-    "browserify": "^10.2.6",
-    "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0",
+    "browserify": "^16.5.2",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
     "gulp-util": "^3.0.6",
-    "node-sass": "^3.2.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.3"
+    "node-sass": "^4.14.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.11.1"
   }
 }
