@@ -4,8 +4,8 @@
   "author": "Rachel <rachel@wetfish.net>",
   "description": "The Official Site for Wetfish Enterprises",
   "dependencies": {
-    "wetfish-basic": "^0.7.11",
     "font-awesome": "^4.7.0",
+    "wetfish-basic": "^0.7.11",
     "wetfish-server": "^0.2.0"
   },
   "devDependencies": {
