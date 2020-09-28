@@ -14,7 +14,7 @@ var bundler = watchify(browserify({debug: true}));
 // Object to handle bundling / compilation tasks
 var bundle =
 {
-    deps: function()
+    deps: function(done)
     {
         var dependencies =
         [
@@ -25,18 +25,20 @@ var bundle =
         gulp.src(dependencies)
         .pipe(concat('deps.js'))
         .pipe(gulp.dest('./static/js'));
+        done();
     },
 
-    js: function()
+    js: function(done)
     {
         bundler.bundle()
         // Log errors if they happen
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
         .pipe(source('bundle.js'))
         .pipe(gulp.dest('./static/js'));
+        done();
     },
 
-    scss: function()
+    scss: function(done)
     {
         var options =
         {
@@ -45,12 +47,15 @@ var bundle =
 
         var result = sass.renderSync(options);
         fs.writeFileSync('./static/css/bundle.css', result.css);
+        done();
     }
 };
 
-gulp.task('fonts', function(){
+
+gulp.task('fonts', function(done){
     gulp.src('./node_modules/font-awesome/fonts/**/*.{ttf,woff,woff2,eof,svg}')
     .pipe(gulp.dest('./static/fonts'));
+    done();
 });
 
 function watch()
@@ -69,11 +74,11 @@ bundler.add('./static/js/main.js');
 bundler.on('update', bundle.js);
 bundler.on('log', gutil.log);
 
-// By default, do everything
-gulp.task('default', ['deps', 'js', 'scss','fonts', 'watch']);
-
 // Separate tasks for individual things
 gulp.task('deps', bundle.deps);
 gulp.task('js', bundle.js);
 gulp.task('scss', bundle.scss);
 gulp.task('watch', watch);
+
+// By default, do everything
+gulp.task('default', gulp.series('deps', 'js', 'scss','fonts', 'watch'));
