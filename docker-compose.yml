@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  fishblog:
+    image: fishnet/blog
+    container_name: fishblog 
+    restart: unless-stopped
+    tty: true
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - "2304:2304"
