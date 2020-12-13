@@ -9,6 +9,5 @@ services:
     working_dir: /app
     volumes:
       - ./:/app
-    # Uncomment to forward traffic via port 80
-    #ports:
-    #  - "80:2304"
+    ports:
+      - "2304:2304"
