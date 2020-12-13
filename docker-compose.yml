@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  fishblog:
+    image: fishnet/blog
+    container_name: fishblog 
+    restart: unless-stopped
+    tty: true
+    working_dir: /app
+    volumes:
+      - ./:/app
+    # Uncomment to forward traffic via port 80
+    ports:
+      - "80:2304"
