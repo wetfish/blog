@@ -25,8 +25,8 @@ build/Release
 # Dependency directory
 
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
-node_modules
-prepros-6.config
-config.js
-uploads
-static/fonts/fontawesome-webfont.*
+app/node_modules
+app/prepros-6.config
+app/config.js
+app/uploads
+app/static/fonts/fontawesome-webfont.*
