@@ -30,3 +30,7 @@ app/prepros-6.config
 app/config.js
 app/uploads
 app/static/fonts/fontawesome-webfont.*
+
+mariadb.env
+web.env
+config.js
