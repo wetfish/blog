@@ -1,15 +1,22 @@
-FROM node:14
+FROM docker.io/node:14
 
-COPY package*.json ./
-RUN npm install
+COPY ./app /app
 
-RUN useradd fishy
+USER root
+
+RUN set -exu \
+  && groupadd --gid 1101 fishy \
+  && useradd --uid 1101 --gid 1101 --create-home --shell /sbin/nologin fishy \
+  && chown -R fishy:fishy /app
+
 USER fishy
-WORKDIR /app
-VOLUME /app
-COPY --chown=fishy:fishy . /app
+
+RUN set -exu \
+  && cd /app \
+  && npm install
+
 EXPOSE 2304
 
+WORKDIR /app
+
 CMD [ "node", "/app/server/main.js" ]
-
-
