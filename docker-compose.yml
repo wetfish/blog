@@ -3,45 +3,73 @@
 # aka things we don't need/want
 version: '2.4'
 services:
+  # webservice
+  #
   fishblog-app:
     # production: track "prod" tag on ghcr.io
     # image: ghcr.io/wetfish/blog:prod
     # for development, build the image
+    # TODO: once ghcr.io autobuilds in place, change this
     build: .
+    
+    # restart unless we stopped it manually
     restart: unless-stopped
+
+    # db connection info
     env_file: 
       - web.env
+
     # uncomment to expose port directly
-    # normally behind centeral traefik defined in services/traefik
+    # normally behind centeral traefik defined in production-manifests/services/traefik
     # ports:
     #   - "2304:2304"
+
+    # our config file
     volumes:
       - "./config.js:/app/server/config.js:ro"
+
+    # join both the internal-to-this-stack network and the traefik backend network
     networks:
       fishblog-internal: {}
       traefik-backend: {}
+  #
+  # end webservice
 
+
+  # database
+  #
   fishblog-db:
     image: docker.io/mariadb:10.10.2
     restart: unless-stopped
+
+    # config / secrets
     env_file:
       - mariadb.env
+
     # built-in healthcheck script
     healthcheck:
       test: ["healthcheck.sh", "--su=mysql", "--connect", "--innodb_initialized"]
       interval: 60s
       timeout: 5s
       retries: 5
+
     # mysql data and socket/pid dirs
     volumes:
       - "./db/data:/var/lib/mysql:rw"
       - "./db/run:/var/run/mysqld:rw"
+
+    # join just the internal-to-this-stack network
     networks:
       fishblog-internal: {}
+  
+  #
+  # end database
 
 networks:
+  # ephemeral and internal to this stack
   fishblog-internal:
     name: fishblog-internal
     driver: bridge
+  # persistent, externally created
   traefik-backend:
     external: true
