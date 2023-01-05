@@ -3,8 +3,6 @@
 # aka things we don't need/want
 version: '2.4'
 services:
-  # webservice
-  #
   fishblog-app:
     container_name: fishblog-app
     # production: track "prod" tag on ghcr.io
@@ -16,21 +14,20 @@ services:
     # restart unless we stopped it manually
     restart: unless-stopped
 
+    # our config file
+    volumes:
+      - "./config.js:/app/server/config.js:ro"
+
     # uncomment to expose port directly
     # normally behind centeral traefik defined in production-manifests/services/traefik
     # ports:
     #   - "2304:2304"
 
-    # our config file
-    volumes:
-      - "./config.js:/app/server/config.js:ro"
-
-    # join both the internal-to-this-stack network and the traefik backend network
+    # join the traefik backend network
+    # comment out this and the networks: stanza below
+    # if you uncomment the port exposure above
     networks:
       traefik-backend: {}
-  #
-  # end webservice
-
 
 networks:
   # persistent, externally created
