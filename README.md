@@ -24,3 +24,8 @@ docker compose logs -f
 ```
 
 The service will be available at [http://127.0.0.1:2304](http://127.0.0.1:2304)
+
+## When do I need to rebuild the container?
+
+Whenever you make an edit in app/. \
+If you're brave, you could bind mount in a devlopment directory to `/app`
