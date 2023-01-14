@@ -1,0 +1,24 @@
+# version 3+ does different things re: networking from 2.x
+# mainly things to support swarms
+# aka things we don't need/want
+version: '2.4'
+services:
+  fishblog-app:
+    container_name: fishblog-app
+    # production: track "prod" tag on ghcr.io
+    # image: ghcr.io/wetfish/blog:prod
+    # for development, build the image
+    # TODO: once ghcr.io autobuilds in place, change this
+    build: .
+    
+    # restart unless we stopped it manually
+    restart: unless-stopped
+
+    # our config file
+    volumes:
+      - "./config.js:/app/server/config.js:ro"
+
+    # normally behind centeral traefik defined in production-manifests/services/traefik
+    # localhost for dev, feel free to change listen address
+    ports:
+      - "127.0.0.1:2304:2304"
