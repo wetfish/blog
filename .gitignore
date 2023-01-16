@@ -25,8 +25,11 @@ build/Release
 # Dependency directory
 
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
-node_modules
-prepros-6.config
+app/node_modules
+app/prepros-6.config
+app/uploads
+app/static/fonts/fontawesome-webfont.*
+
+mariadb.env
+web.env
 config.js
-uploads
-static/fonts/fontawesome-webfont.*
