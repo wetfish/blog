@@ -8,9 +8,8 @@ services:
     # production: track "prod" tag on ghcr.io
     # image: ghcr.io/wetfish/blog:prod
     # for development, build the image
-    # TODO: once ghcr.io autobuilds in place, change this
     build: .
-    
+
     # restart unless we stopped it manually
     restart: unless-stopped
 

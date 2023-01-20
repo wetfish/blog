@@ -6,11 +6,8 @@ services:
   fishblog-app:
     container_name: fishblog-app
     # production: track "prod" tag on ghcr.io
-    # image: ghcr.io/wetfish/blog:prod
-    # for development, build the image
-    # TODO: once ghcr.io autobuilds in place, change this
-    build: .
-    
+    image: ghcr.io/wetfish/blog:prod
+
     # restart unless we stopped it manually
     restart: unless-stopped
 
