@@ -33,3 +33,5 @@ app/static/fonts/fontawesome-webfont.*
 mariadb.env
 web.env
 config.js
+
+uploads/*
