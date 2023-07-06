@@ -13,6 +13,7 @@ services:
     # our config file
     volumes:
       - "./config.js:/app/server/config.js:ro"
+      - "./uploads:/app/static/uploads:ro"
     # normally behind centeral traefik defined in production-manifests/services/traefik
     ports:
       - "127.0.0.1:2304:2304"

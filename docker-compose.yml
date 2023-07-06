@@ -9,9 +9,10 @@ services:
     image: ghcr.io/wetfish/blog:prod
     # restart unless we stopped it manually
     restart: unless-stopped
-    # our config file
+    # our config file and static uploads
     volumes:
       - "./config.js:/app/server/config.js:ro"
+      - "./uploads:/app/static/uploads:ro"
     # normally behind centeral traefik defined in production-manifests/services/traefik
     networks:
       traefik-backend: {}
